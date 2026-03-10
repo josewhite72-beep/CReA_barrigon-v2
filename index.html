@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>CReA - Comisión de Rendimiento Académico</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Sistema de Seguimiento de Rendimiento Académico - Escuela de Barrigón">
+    <meta name="theme-color" content="#0d9488">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="CReA">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIkNSZUEgLSBDb21pc2nDs24gZGUgUmVuZGltaWVudG8gQWNhZMOpbWljbyIsICJzaG9ydF9uYW1lIjogIkNSZUEgQmFycmlnw7NuIiwgImRlc2NyaXB0aW9uIjogIlNpc3RlbWEgZGUgU2VndWltaWVudG8gZGUgUmVuZGltaWVudG8gQWNhZMOpbWljbyAtIEVzY3VlbGEgZGUgQmFycmlnw7NuIiwgInN0YXJ0X3VybCI6ICIuLyIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjZjBmZGZhIiwgInRoZW1lX2NvbG9yIjogIiMwZDk0ODgiLCAib3JpZW50YXRpb24iOiAicG9ydHJhaXQtcHJpbWFyeSIsICJzY29wZSI6ICIuLyIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsLzlqLzRBQVFTa1pKUmdBQkFRQUFBUUFCQUFELzRnSFlTVU5EWDFCU1QwWkpURVVBQVFFQUFBSElBQUFBQUFRd0FBQnRiblJ5VWtkQ0lGaFpXaUFINEFBQkFBRUFBQUFBQUFCaFkzTndBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBOXRZQUFRQUFBQURUTFFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQWxrWlhOakFBQUE4QUFBQUNSeVdGbGFBQUFCRkFBQUFCUm5XRmxhQUFBQktBQUFBQlJpV0ZsYUFBQUJQQUFBQUJSM2RIQjBBQUFCVUFBQUFCUnlWRkpEQUFBQlpBQUFBQ2huVkZKREFBQUJaQUFBQUNoaVZGSkRBQUFCWkFBQUFDaGpjSEowQUFBQmpBQUFBRHh0YkhWakFBQUFBQUFBQUFFQUFBQU1aVzVWVXdBQUFBZ0FBQUFjQUhNQVVnQkhBRUpZV1ZvZ0FBQUFBQUFBYjZJQUFEajFBQUFEa0ZoWldpQUFBQUFBQUFCaW1RQUF0NFVBQUJqYVdGbGFJQUFBQUFBQUFDU2dBQUFQaEFBQXRzOVlXVm9nQUFBQUFBQUE5dFlBQVFBQUFBRFRMWEJoY21FQUFBQUFBQVFBQUFBQ1ptWUFBUEtuQUFBTldRQUFFOUFBQUFwYkFBQUFBQUFBQUFCdGJIVmpBQUFBQUFBQUFBRUFBQUFNWlc1VlV3QUFBQ0FBQUFBY0FFY0Fid0J2QUdjQWJBQmxBQ0FBU1FCdUFHTUFMZ0FnQURJQU1BQXhBRGIvMndCREFBVURCQVFFQXdVRUJBUUZCUVVHQnd3SUJ3Y0hCdzhMQ3drTUVROFNFaEVQRVJFVEZod1hFeFFhRlJFUkdDRVlHaDBkSHg4ZkV4Y2lKQ0llSkJ3ZUh4Ny8yd0JEQVFVRkJRY0dCdzRJQ0E0ZUZCRVVIaDRlSGg0ZUhoNGVIaDRlSGg0ZUhoNGVIaDRlSGg0ZUhoNGVIaDRlSGg0ZUhoNGVIaDRlSGg0ZUhoNGVIaDRlSGg3L3dBQVJDQURUQVVFREFTSUFBaEVCQXhFQi84UUFIUUFBQUFjQkFRRUFBQUFBQUFBQUFBQUFBQUlEQkFVSENBRUdDZi9FQUZJUUFBRURBd0VFQkFjS0NRb0dBZ01BQUFFQUFnTUVCUkVHQnhJaE1STkJVV0VJRkNKeGxMSFJGU015VklHUmtwUEI0UmMwUWxWV2RIV2hzaGduTTBORVJWSmlaR1VXSmxPQ29zSWtOelp5Yy8vRUFCd0JBQUlEQVFFQkFRQUFBQUFBQUFBQUFBTUVBUUlGQUFZSENQL0VBRG9SQUFJQ0FRRUZBd29FQmdJREFBQUFBQUFCQWdNUkJBVVNFeUV4UVZGU0JoUWlNbE54a2FHeDBSVWpZY0VXTTBLQm92QWtRM0xoOGYvYUFBd0RBUUFDRVFNUkFEOEF1VEtIRmNCQ012TW5rdDA0RWJDNGd1SXdEclhWeGRDNDdBWmRDNHVoUVd3R2FqaEVIRG1xeTJuN1piRnBKMGx2b0d0dWwxYndNVWJ2ZTRqL0FKM2ZZT0t2VlRPMlc3QlpaWlJiNkZwTk9PWndBbys0YWpzTnVPN1gzbWdwajJTVkRXbjFySDJvOXBldk5YMVpnTnhxV01rT0cwbEFDeHZtNGNUODZOYXRrdXY3dzBUdHNNMFlkeDM2cDRZVDlJNVdvdGxSaXMzV0pCbFdvK3N6Vi80UWRFQTRPcXJSNlMzMm80Mmg2SC9TcTBla3Q5cXpFM1lOcjRqalRXNGR4cW1vdzJCNitQOEFaN2I2VTFkNWpvL2EvUTdFTzgwNk5vZWgvd0JLN1I2UzMybzQyaDZHL1N1MGVsTjlxekVOZ092ei9aN2I2VTFkL2svN1FQaTF0OUxhdTh4MGZ0Zm9XeEh2TlBEYUpvYjlMTFI2VTFIRzBYUXY2V1dmMHB2dFdYLzVQbTBFL3dCbnR2cGJVWWVEMXREUDludG5wYlYzbU9qOXI5Q1VvOTVwL3dEQ0xvWDlMYlA2VTMyb3cyamFFL1MyeitsTjlxeStQQjQyaWZGN1o2VzFHSGc3YlJmaTlyOUxhdTh5MGZ0Zm9Yd2pUNDJqYUQvUzJ6K2xOOXFOK0VmUWY2VzJmMHB2dFdYeDRPbTBiUDR0YS9UR3J2OEFKejJqZkZyWjZZMVQ1bG8vYS9RbkNOUWZoSDBIK2wxbjlLYjdWMGJSOUIvcGRadlNtKzFaZS9rNWJSdmkxcjlNYXVqd2N0by94YTErbU5YZVphUDJ2ME81R29Qd2o2RC9BRXVzM3BUZmF1L2hJMEYrbDFuOUtiN1ZsNytUbHRIK0xXdjB4cTcvQUNjZG8veGExK21OVnZNdEg3VWsxQ05wR2d2MHVzM3BUZmF1amFSb0w5THJONlUzMnJMdjhuRGFQOFd0ZnBqVUI0TiswZy8yYTErbU5YZVphVDJweHFlSGFMb1dWKzR6VnRtSi9XMmUxVDF1dWx0dU1Za29LK2xxbUhrWVpXdTlTeHZONE9PMHRqY3RvTGJMM05yR1ovZXZOM2JRTzBuUkVuanMxbnU5dUVaL0dLVXUzUi8zTU9GWmJQb2w2bG5NazN3U3VMR2V6L3doTlk2Zm1qcHI0NFgyaGFRSENieVoyanVmMS9MODYxSHM2MTlwdlhWczhjc2RZSFNOQTZhbms4bVdJOWptL2J5U3QranRvNXlYTHZPUFZoZDcxeEdielN5SlIxb3lsWW1qZXgycmpHNTVKZU9NNUNJa0ZqSElSOFJhN0JDNkl2SnpoU1BSQ1JqWGRZUTZBYnFMd3hqZ0VTNWlJV2tIZ3BKMU1TVTJuWUdrZ0ljb1lBeXFhNWpYajJJSlRjUVZNQWp3WXd1OEVVRmR5bFRPM1F3WEVCanRRNHFEdDBBeWpCY0JSZ3VJM1RvUnVHRndFY2w0TGJmckwvaERSczA5TThDdnFpWUtVZFlKSEYzeUJFcXJsWk5RajFaYU1jczhIdC8yc3kwTXMybGROVkc3T0J1MWxXdzhXZjVHbnQ3U3ZCYktObE56MWs1dDB1VWtsRGFTN1BTa1prblBYdWcveEZGMkg2RmZyZlVjbHd1b2UrMlVqOStvYzcrdWtQSGN6KzhyVnRQREZUd01nZ2paSEZHME5ZeG93R2djZ0F0aSsrT2hod2FmVzdXV25QaHJkajFJYlNXa2RQYVhwV3dXYTJRMDVBOHFVdDNwSDk1Y2VLOUEzdFJRRWNMRmxKeWVaUExGdXZOaG1oS041SWdLVWFxTWxDa2FWSFVrMmNrcTFWQ29FampIQzk3UUNXdEpBSndPQTdWQW5VRnh6bUdtdDhqTjNtYW9ONHFmbjZJVThycWd0RUlZNHlGM0lOeHh6OGlwbWkxSGV0VHoxVXVnTm4xRFdXbWxtTEcxZFpVR0xwWHQ0SG94bmduTkpSeEUyMXlYYStTK3FEVnBkcFpUcjlkR3h0UGl0QUg4Y3ROVzBBL0wxZFh6cDNCZmFsOWZERStPaWJDN0hTT0ZRQ1daSDcrUEJWaHEvVkZaWjlPMkd1bDJmVXRMZUxwV0dqTkxWeWxwYVJqQkRoMUU0NXAxUjZvdU5pMVJhN1ByblFsRmFvcnZOdVUxWFIxUFNONlRzY212TW00NVVWMjlxN091T2ZNTXNGdytQVVFjV21xZ0RnY0ViNDRjY0lOdWR1M3QzeDZuempQOUlGNG5VR3A5bDlsdTB0c3UxeHQ4TldYQXp4N3ppQTdxTDhjQWZPbitzSmRKMkhSTmJxaVdrcGFtbGhwK2xpTytYTmxjZmdBSFBISlBOS3JUOUUwK2ZUbDFPU1I2eUtzbzVaUkhGVlF2ZWM0YTE0Sk9FNjVLb2RrZXY3WmVhYTVUYWdzOEZndU5xRFpERnZ1STZKNHkxd0I3ZXhlbk8wQ2dycmNZcUdscUpMbE00eFJVYm1rUE9lVHU0WTQ1UTlUVzlQTndsMVJXVTRRNnM5czF3TGkwT0JJNnNvL0plYTBUWUs2ME9xcW00VmJaNTZyZEpBemlQQTR0NDgrUFd2VEFjZUtGWHZPT1pMREpnM0paYXdBQkhhMWRhMUtzYWp4UVJJS0daUnVqeTB0SXlEd0k2aWxtTXlsaEdqUmdGVUNwdHAreERTR3M0SmFpR2tqdEYxSUpiVjByQTFyai9uWU9CODQ0cktGL3MrdGRqbXQ0M09mSlJWY1IzcWVwaUpNVlF6UC9BSkE5WUsraEpqWGs5cUdoTFRyelM4OWx1a1RRNGd1cHFqSGxRU2RUZ2V6dEhXdERUNnFWZm96NXhJbFdlWDJLYlNhRGFGcHdWSURhZTUwK0dWbE5uNEx2OFEveWxXRzBoWU0wL1gzelk3dFZkSFZ0ZEhKUnpkRFZ4L2t6UWs4U08wWTRoYmpzdHhwN25icWV1cFpCSkJQRzJTTndQTUVaQ0ZyTk1xWlpqNnI2Rkl2Sk13ak9FL3AyZzRCQ2phZDNIbXBhbEJJSEJDclE1U2huZmE2cHR0TzJXS0Jqb2p3ZEk0L0FQVmtLRDAzZXF0OWNhQ25oRlMxN3k4dWM3RzcybnpLUzF0Y2JKVFdzd1hlNHRwbVBjM3lXbkwzY2VBQTg2YzJyVDlCUVZzZHdvblNzQmp3V09PUTRIcldUcU5KckxkZEd5cXowSTlWeTdldlo5ZjdHN1JkcGxSS0VsNlgrNHlFbnU4N3FxcHA2VzF6enRnazZOMGdsWTBGMk9ySkJVZlBlWVlibEJRM0NuZlF5MUlKaE1ralhOZVIxWkJPQ205ZFJVTmZQYy9HN2dLUVFWYjNuR01rYm82aXZNUEVGYmJwSUJhTXdRdGZNMnNybkFIZHg1UFJnSE84VHg0OGxwM1NhTXF4SnJtZS8zRDJCQmVSNlovOEExWlBwRkJDMzBLN2tTSStWQmMzZ3VnZ3BReTkwNkViaXVBOWk3eFhaSTNUcTZCeDVvb3lqdHpsY2RnNC95V2tyS25oSzNxVzY3UW0ycUlsOGRCRzJKclFlY2p1SjlZQzFSV09EWWxrT2tqRisyOE5aTjVUWnJ1UzRIc2FTZnNXcnNxS1U1V1BzUmVLeHpOSmJNTk93NlgwVmI3WkcwQ1hveEpPY2NYU080a3IwNEpYTUFjdVFYUVIxTE1zbTV5Y24xWW8wMjhod1VjSk5xTzFVSXdIYWxXcE5vU3JBb0xKQ3JPeExNSFdrNHhrcHl3WTZsT0FzWWphN1VYdWhhS3lnMzl6eG1COFc5MmJ6U00vdlZLN045WW5aZlpKZEg2dXNkMWltcEo1RFRUMDFNWkdWRFhISXdSMXErbU5Tell3N0FJQnh5eU9TY291VUlPdWNjeGZQdTVvTkdKbjNiSFgzWFdkZzBWY0tPMDNHelR5M2NpTVZFT1h4RHlRMlFqczYrSzdVNmUxRFI3YU5Qd2JRN3pXWHUzdGFaTFpWUlFCa0xKK29QQUhEajlpMFExaVVheE53MXpoQlFqSEM1Ky9uM1ByOXdxaVpObzZldDBwVjZsc1dxYXE2VU10YlZTUDk1c2Jhd1ZySFp3UkllSVV4ZjdGZDdqYXRIN0x0TkdxcVlJMmU2VlRKY29IUXRhM084eUtRRE9NZG5ldFBCbzRaNnVYY2picUs5b3liVXQzbjhzNHhucCs1YmRNL2F5b2IvcDY5MmpVV3JiUGJxNm1tcTRxYWFLMXh1M0d0YU1COG5ETHNjTURsd0t2Q08zMjUxYXk2eDBrSGpKaURHekJtSGJuVUZJN3FHNmtiWjc2WExESVZTUWxoZERVcHVyb2FnN3BiQnhvS2NSdFVkVVhhMFVkVXlscTduUlU4Ny9neFNUdGE1M21CS2xxWXNlMFBZNE9hUmtFSElLUENEQ1FpTFJScHd5THVYSVFBTWtnQmVQMW5ydUMzdGZSV2NzbnF1VHBlYkdlMHE5K29wMHRlL2E4SVliakJaa1RXcWIvYmRQMGhscTVBNlRCTFltL0NkN0IzcHJvYTlPMUpwZW52RG8yeDlPWFlhM2tBSFlDb0hYZDhxZkZwSFZFNzVhcXFPQzV4eWNkYXVQd2YzZEpzdG9QOHNramYvSXBIWjJ0bnJaU20xaVBZdjNGSzlSeGJuQmRNRkxlRzdvMk45QmJ0YTAwV0pZbkNrcXlCOEpwNHNKL2VGS2VDWnFSMXoyZWkzVkVoZEpiSmpDTW5qdUhpMzE0Vm5lRUxhNHJwc2YxSlR5TkR0eWtNemVISnpDQ0NzeStDUFh5TnVsN29HeU9qRXNNY2djT281SVcvSjcra2FmOEFTV2t0MlpybWU4MjIyUWRMVlRzakhVT1pQbUM4anFEYU5XemgwRm9qOFdqNWRLL2k4K1ljZ3ZPWCsxVlZKaXFtcXZHV3ZkZ09jZksrWmVYdjl4WmJxRjBtUjBydkpqYjJudFhoTmJ0UFZ6dDRFRnUvWDRnYmRWT0NhNkRHL1hLUzVhcHQ5RzZvZk5JK3JpTXozT3lTZDhjRm9iYVRxS3UwN1pLQjlFK25wbTFGVkhUelZ0UXd2aXBHRUh5M0FFWjVZNWdjVmxyUndmUHJHMWI1TG5Qcll5U2V2eXNyWE5WVXNmbU9SclhzSXc1cmhrRWQ0SzlCc3VLMDFlNitmZjhBcVRzdXh5VTVQdktmdld1N3REcVNOc01kcHYxTTFsUG1vZ3RaTEtrdjN0NzN6ZUlZY040QTV5ZUNpZFJhN3A5VDZlRUVPa3A2T3JkVWt4TnBXYjdpeHJDNDd3YTNJSU9CamxrODFkc25RZ2JyWVlnM0FBQVlNY09YekpPTG9vbkYwY01USEhPWE1ZQVRubnhDMHAzVXpXSlFIcHk3TW1mL0FQaWJTZmJlL21LQzBCMFZMOFhnK3JIc1FTKzVwZlovTVh5ZUV5Z2lncm9Leml2RERBa2RhTng3VVFGR1VsZUdIR1FqQWxFQ09GMkN2REcxeUo2RXJKK3p6anQ1cHMvbkdYLzJXcnJuL1FsWlIyZS8vZkZOKzBaZlU1YTJ6MStYYjdqcFJ3aldQV3Vqem9nSlJnNVk0RGhpalNqdEpTVFNDbG8xMlNtNEtzQlRpTUpHTUJPWXhsU2xrbFFGSXhua25NYlVTSnFkUnRSWXhEUnJEUnRUaGplNWNqWW5NYkVWUkRSZ0ZZeEt0WjNKUnJFbzJORVVBcWdKQnFNR3BjTTdsME03bGZjTDdvaHVkeTRXRHNUa3NYQ3hSdUVibzJMRlVuaE5hdDFucERTOU5WYVRwRDBjeGV5cnJCRnYrTERBd2U0OTU0SzRpeFJ1cExSUzN5d1Y5bnJtdWRUVmtEb1pBM25nanEvY3IxWWhOT1N5aXJqaythOXpycXk2VjBsZGNhcWFycXBIYno1cFhsem5IemxhYjhDWFcxMHFyaGN0SFY5VE5WVTBjQXFhUXlQTGpGZzRjMFo2dVJ3czVhdXNOdzA1ZjZtMDNHanFhU1dKNTNHVHMzWEZtZkpkanZDc2p3VDlRdzZjMm1TMVZSUzFFOVBKUVNpWjBMZDR4TmI1UmNSMmNGNkRVcUxwYkY2NVlsek5pNjBvdFUzT0kwMXJFVWRJUjVXNUxpUi9uN0FxbXI2YWUzMWNsTlZOM0pJamg0em5CVmdPMnhhQ3FiSkxWMm5WVnNtcUN6M3FFekJyOTQ4c3RQRVlWU2FydmJXMjU4Z2xiTE5WNTNaR25JT2VaeXZuTzNkSm0rRVZseWwzOUV2ME8xa294VzlrOGxxZXZGeXVqM3RQdlVma004dzYxb3p3ZEhqOEdOTzNQd2FpVWY4QWtxTDB4b0srYWgwN1czcTJSQ1NPbGR1aVA4cVhoazd2YmhYVDRPeGtpMEZMQksxekh4MWtqWE5jTUVGYmVocTRLVVV1V0JQWjZrcnQ2UzZway90ZU9kbW1wZjJiTi9Dc2YrQ280UjZtdWtqamhvcEdrbnM4b3JYbTFwMmRtbXBQMmJOL0NzVDdBcWlXRzkxN0dPdzE4RFE3dkdWcDJYS3JSV3o3alJ0bHp5YUd2dDQ4WWtmUE0vZHBvaDVJUFVPMVZ6VlMxV3BiN0hCU01MblNPM0lXZGc3U25HcWJ3eXJhS0NuZDcyMCsrT0g1UjdQTXZiN0xOT0cyVS91dFZzeFV6dHhHMGo0RFBhVjVMWjJsbEtUdnQ5Wi9ReVpadnMzZXp0UEs2YXM5Zlo5b1ZxcExqVHVpa2JVdElQTnJnTThRZXRhSGRVRnp5Y3J6eGpwNTVJbnp3c2tkRTdlamM0Y1dudEJVbEUvSnl0bVBvanRFT0NtaytwTE5sMzR3TThRanNjbWNEazZqS3ZrTzVaRnNvSW1RZ3V5Ums4SmxHQkNSQlJtcGJCb2NNVkI0b3dTWVJncElkWXFDamdwSVpTakNySkZYV05ibi9RbkN5anMrL3dEdmFtL2FNdnFjdFhYTSs5RlpRMEFjYmRhYy93QzR5LzhBc3RYUWZ5N1BjQnRoakNOV2h5TUQzcEpyZ2pBaFlwTHFGMkZMeHB2SHhUaUlLU3JwSE1RVHVJY0FtMElUMkZxSkZIS29YaWFua0xFaEMwSjVFTzVNUmlYaldLeHNUcU5uSkp4TjVKM0V4SGpBSW9ZQXhpVmF4R1kxS0JxS29rcUlRTVhkeEtocU51cTI2VHVpQlp3WEN4TDQ3bHpkQ2h4T2NSc1dJcm00Nms1YzFlVDJzWCtQUzJ6dStYdVJ3YTZDa2VJdU9NdmNOMW8rY3FGRGVhUlNTWFV6aDRTR3ZkQVh6V1Z2dDFCYTRMcGNhV2RsTlYzRnhQUnh4NzREbUFENFo1OGVRVDdUbG90V2tibnRBdE5CYktXbWhwN2Y0eERNWnpKTStLU01rQTVIQnF6QkxJK1NWMHppZWtjNHVKN3ljNVZrMy9hQTZvdU05elkvTHJycHhsQlV0SFZLM0E0L01mblQrcDBjcFFWY1h5LzlwL2NTMzh0c3JRa0U3MkJ4NHIzZXl5NTFWZGRxVFRVc3VXMUVnanBkODhHT2NlWGNPdGVEQTRBSi93Q0pYS2p0OUplNDRwWTZlU1V0Z3FXamdKR0hrRDFFY0NuZFJSQzZHNU1CT0Ntc00ra21rN1BUYWIwOVNXaWtIa1FNQWM3L0FCTzZ6ODZkeHh3UU9sZERESEdaWGI4aGFNYnp1MDk2ci9ZRHJXWFcrelNodWRZN05mQm1tcSs5N2VHOThvNHIzVG41WG5iVzYyNHZzSE41SkpJODd0WGRuWnRxVDltemZ3ckRPeXV1TkxWMXJXREVrc0xXaDNZTXJjRzFOMzgzR292MmROL0NzVGJHTFErOGFna2dhN2NZMk1Pa2QyRFByUjZvOFhTV1I5d3ZkbWF3dXBjR3pyVFRybFZ0dUZVdytKd3V5QWY2eDNaNWxickg4QUJ3Q2lyVEZGUjBFTkxBME1pamJ1dEFUNWorS1hWRzVIQjFWQ3FqanRKQ0IzSlNFRHVTaVlINVVoVE80aEFsRXN5V2hPY0ozRW1WUDFKN0dxTXFMWkNDSmxCUmtrcjRGR2FVa0NqQTk2R2VsNEl1SEZIYWNwdUNsR2xTaXJwRjJsS05LUWFVcXdxNktPb2IzSSs5RlpSMEVjYmM2Yy83akwvN0xWdHovb2lzb2FFNGJjWUQvdU12MnJVMFA4dXozQ2VvaGlVRitwcWNPUjJPNHBzSEpXTjNGWWc4NkIzRVU3aDQ0NHBsRTVQYWRYU0J1Z2V3QlBvQnhUT0FKL0FPS05GRk9FTzRXcDdDMU5vQW5zSTRKcUNLdUE0aWJ3VHFNSkdJY0U2amFtSXhJM0F6UWxXdFhHaExOYWl4aVRnS0FqQnFvSHdqOXZrK2dyd05OYVpwS1dxdWdqRHFpYWZKWkJua0EwZkNPTzlWcHNyOElUYUJmdHBkaHRsN3VWdGp0OVZVaUdacmFYY0JEaHc0NUp6bkdQT21ZNmVUanZBSlhRVXQwMlJ1OXlLNXFjQnVRb2JWMm9iTHBTeVRYbS8xMFZEUXc0RDVYOXA1QURtVDNJTzdub0ZmSWZPR0FzbCtHVnRPdHR6Z2gwTFk2d1ZIUXo5TGNYeG5MQTRmQmp6MWtjU1VydHgyOTFPcHJEVzBHem10a3A2T0hkYlcxRG8zTXFKR080Wmp6eWJuZ1R6WG5kZy9nOVhUVlVrTi93QmFSMUZ1czVJa1pBN2hQVmRmWHhhMDlwNGxNVlV4ci9Nc0ZMSjcvb3dJN1l2c1ZmclBabHFIVWxZeVNPY3hGdG40NDNuczR1ZDNnL0JWSXlNZkhJK040M1hzY1d1SFlSd0sraG10THBRNlpzc1dtOVB3eFV6SW9oSHVSRERZWXdPUTd5dm45ZTNOZmVhMXpSaHBxSGtmU0tIb2RveDFPb3Nxai9Uai93Q0N0bTdIMFYyRE5YWG9TT24xRDRNbXJMT1d0ZFYyU3RiWHc4UEtEWFl6ajV6OHlwUlduNE5Od2lacld1MDlXVENPaXZ0dG1wSmM4ZzdkSmFmazRwL1VaM01yczVsSXZtV1o0RU4yTHFMVVZtYzg0WkpIVXNiNXh1bjFMU0RuTExuZ2lSMnFoMmczdWpvN25QUElLTXQzWFFialhocnlNZzV6dzgzV3RQUE9WNTNhYnhlOEV0NFI1M2FnN096blVYN09tL2hXUmZCeEpicU92L1YyK3NyVyswOGo4SFdvdjJkTi9Dc2plRHNjYWhydi93Q0RmV21kbXZORXlhbm1ScENCL3ZZNHB3eDJVd3B6NUFUeUZkTkI1RWhUSGtwS25QQUtMcHVwU2RQeVNkaUFzbEtVcDlHVkgwM0lKOUdlQ1ZreWpZdmtJSlBLQ3BrakpYWWNqQnlRRGtacmxVOTQ2UmRya3ExeWJCeVZZNEtVVWRJNllVcXdwc3c5aVdZVVJBblVJM00rOUxLT2hqamJkQWY5d2wrMWFzdWJoMEpXVWRFbkcydUUvd0M0Uy9hdFRSZnk3UGNabXJoaTJ0ZnFhZTMwdEU1TW11eW5FVHVLeFRlZW4vUWtJWEovVGxSa0R1S2tLZkhCWGlBblJna3FkU05PbzZuUGFwS21URUVLeXFIOENmUWprbWRPRTloVFVFQWxBZHhCT1kxNDdVV3Z0TDZlbWZUMTl3QnFtODRJbWw3L0FKaHlYZ0w5dHpuQmN5eVdkckIxUzFUcy9MdWoycUxOWlRWeWxJME5Ic0hYNnpEcXJlTzk4bDh5OTJES1hieXdzMmJLTmM2aDFmdFNwbTNXK1BaUVV6SHl2aWJpT0o3dVRSZ2MrZld2UWVFN3RycmRuQW9iTllLYW5udTFaRVpqTE41VElZODRCd09aSlRXbHM4NVdZb1Mycm9wYk5zNGRzazNqTHg5Q3BQQzYyYVhxVFcxZHJXeVJ1dXR0bkRmSEJUbnBIMGtqUmdoNEhFRHJ5cy8yU2d1dHh1a05MWmFXcnFLL2Uzb1dVelNaTjRjaU1jY2p0VTlXN1JkWTFFOXlsaXZNdEVibklYMWdveDBJbEpKSnpqamppZXRlZnRkd3VkdnJPbnRkZFYwbFU4R1BwS2VWekh1RHVZeTNqeFcxQ01veHd6ek5rb3lubEgwUGcxNVpORTdNYlhjTlpYVnRMVnhVY2Jab1pKQStkMG9ieGJ1amlYWlZCYWt1MnUvQ1pySmJYcDIzUldiVEZ2ZVpCUFZFKyt5Y203emgxNDZobkhXVXoyRytEbGN0VkYxODJodHVkdnBkNE9ocDNPOStxUWVKTGlTUzBmSmtyV2xzb2RPNk4wOURRVVVWSmE3YlNzd3hnSWFCMzk1UGJ6U2M1UXB5KzBmU2xZdlM1SXF2WUJzT3BObjlwckpOUW1odTEwckh0YzRpTGVqaGEzaTBOM2h4T2VPVjdQWHVyb0xSQzZpb0hza3IzREhEaUloMm52N2w1L1dtMDlqNDVLV3hubzR1SWRWUDRISCtVZmFxWHV0NXJhK3I4VnRRbW5tbWRndmFDNTd5ZXoycnkyME5xejFFblZwdWI3WmRpOXducU5YQ3FPNVdMNnIxRlAwa3RIQkk2U3BseUpKU2NrRTlYbldacnhUUzBkMnFxV2NZbGlsYzEvREhISzNWc2wyVngyNThONzFQRTJXdXlIdzB6dUlpUGE3dGQzZFN4bHRaRzd0UDFJMy9BSEtiK0phdmsvb2xwWXlYYStvdENteExmczdldzg5TlRWRU5OQlV5eFBaRE9IR0o1SEIrRGc0OHhWbWVDL1o3TGZkcDhkRmVZNVhrVXNrbEtXU0ZtSkFNWjRjK0JLOVpxSFFuanZnbmFldjBNUDhBOHUzU1BxWGtEaTZLUjNINWpncXI5amQ3R25kcDFndWJuYnNiS3RzY25IaHV2OGsrc0xiblBpMVNVZXZNSTF1dEd0ZG1teWEzNk0xYmR0Uk1xQkpKVjVpcFlXRHlZSWM1NG5yY2V0V0s0cFdSNGNONXB5RHhDYnZLOGpmWkt5VzlKa1RQT2JVRC9OMXFFZjdkTi9Dc2tlRHNQK1lhNzlYYjYxclRhY2Y1dTlRL3M2WCtGWk44SFRqcUt1L1YyK3RhMnkzK1JZV3A5WTBSVGp5QW5rS1FwMmU5aE9vMnFaTVlZN3ArcFNWTnlDallEakNrS2QzQkoyZ3BFclRua25jWjcwd3AzOEFua1o0Sk9iQXlGL2xRU2U4Z2g1SzVaV3djamh5YkJ5T0hjRng5VWRJNWE3dlNySEpvMXlXWTRLeUJ5cEhqSEpaanU5TTJPUzdISWlBU3FFN203M2tyS21pempiUENmOWZMOXExTGRIKzlGWlkwYWY1NUlUL3I1ZnRXcG92NVZudU1YWFF4ZlQvNUw5alNqWDhVNGljbURYOFU1aWVzUk05ZkxUa3BBN2lwR21keVVSVHU1S1NwbmNrV0FuYlFURk01U1ZPZVNpS1p3NEtUcDNKaUJuV1ZZSmFuZDJKOUNWR1U3bDVyYVRybW4wcmJ1aGdMWmJuTTMzcVBxWVA4YmtkMlJyanZTNkFLZEhacWJWVlVzdGtOdDZ1K25JNkFXeVNqcDZtOHZHV1NBWWRBM3RKSHFLenJkTGc1eGRUeE95M2s1NDYrNVNOWFBkdFVYMFVWQTJhdXVGWEo1VGh4TG5IMUJhQjBMc1dzdHYwaFZVTjdaSFZYV3ZoM1pKOFpGT2VvTTh4NW5yV2ZHbVdyczRqV0YySHUzcTZOZ2FXT25jbktUNi92anVTK1o0UFlIcFN2cXRQM0cvVXNQU0Iwd2hBSHdpR2pKSTdlS296Yi9lSzI2YlNhNkN0Qkh1ZmlsakJKSkRXOXVWdW5aTnBsK2tORTBsbGxjMTA3SFBmSzV2SXVKemxaejhJellKcSs1NjR1R3E5TFFDNzA5eWtNMDBEWEJzc0x1ekJQbER2QzN0bjFScWxsOWNIekRiOXIxZXBuYkRtbS9rdWhtRlBMR0hlN1ZCdURMaFV4a0R6T0JUclZXbnJ6cGU4UHRGK29KS0d1WTFyM1F5ZkNBY01oTUtHb2RTVnNGVXhvYzZHUVBBUEk0UEpiVXVjZlJQT1BLTnRWKzJDK2VMTnA2YUtqb21OWUdod3k5M0FkL3NYaGJ6cWk0M1dvNlNlb3FhK1luaHZrNEI3aDl5OGRvamF6b0FUeFI2dDBsY210UHc1cWFyNlJvNzl6QU9QTmxhLzBMWjlHR3pVZDUwMWJLTVUxWEUyV0NjUjVjNXA1SEx1SzhqYnNyVVdQL2tUeWd5cXR2Nno1RkQ2YjJjNngxWkl5V3BoZGJxRThlbG5CYU1kemVaVjJhRjBCWXRJUWgxSEVhaXRJOHVxbEdYbnpmNFF2WlBjTUpCNVRWT2pxb1dJb1pwMFZkWHBkWDNpWlBsWjcxODM5dE5KTlI3VjlUd1R0TFhpNFNuSGNUa0w2T3ZQQXJEbmhsV2ozTzJ2eVZqR2JzZHlwWTU4OXJoNUx2M2hhT2luaXhvalZMMGNtazlsbEZRWHJZSFpMVWQxOUxWMmdRUHh5NHRJUHpGWWIxbHA2NWFVMVRXV2F2aWtnbnBKaUdPY01id0I4bHc3UnlLMTE0SGQzOTBOa1lvSHV6SmJhdVNISFkwK1UzMXIwZTJqWnhhTm9Wak1VN1dVOTFnYWZGS3dONHRQK0YzYTAvdVFLOVF0UGZLTStqWUdVZDZLYUlid2Z0cEZQcm5TYkthcWV4bDZvR05qcW84LzBqY1lFZzdqNjFZcnlzSDBVbXFkayswU044OEw2YXZvcE1TUmsrUlBHZVl6MXRJNUZiVTBkcVMzYXIwMVMzeTJTaDhGUXpKYjF4dTYybnZCU0cwdEx3NWNTSHFzWGx6WE1hN1RUL043cUQ5bnkvd0FLeW40T0F6cUt2L1YyK3RhbzJsbitiM1VIN1BsL2hXV3ZCdDQ2aXIvMWR2cktQc3Qva1dGcWZXTkcwNDk3Q2N0R0VqVER5QW5BQVV6WXl4U1Brbk1UOEpzRGdZUjJIclNzK1lLUktVOGlrSVg4RkNRU1lLa0tlUkoySURORWh2b0p0dm9JUU1yY1BSMnZUWGVIYWp0ZDNyajdVNlIyMTZWWTVNbXVTclpPOVNtQ2xVUG1QUzdINVRDT1JONis1Q0Zwamh3NlR0Nm1vbThrc3NHdE5LYnhGQTFSY1k2T2xJK0hLUjVMUGFzemFJZVhiV3FaN3VaclpDZm1LdTI3dmU1cm52Y1hPUE1sVWZvay93QTZsTWY5WS8xRmFPenB1VmRyL1F4OXVhV0ZOMm1TNnVhL1kwYzEvRk9JWHFQYTdDWGlrV01tZXlscCtSTDB6MUowejFCd1A0akNoZFg2dmlzMERxYW1jRFZPR0NSeDNQdlJGTlI1c1ZlaWxiTGRpVGVyZGF3V1BGTFM5SExWNUJjSEh5V0R2NzE2blJtcGFMVUZFSmFjOUhNd1lsaGNlTFQ5b1ZNYWYwTmN0VUIxeHVjOGxEVFNaTWJYRE1qeWZ5aU94TVh5M3JSRitqcHBpNk9SaHpEVU40dGtiMzlvWEt5MkQzMzA3Z3RtemRIZERnVnZFMTI5Nyt4ZmV0dFcwMm1MV1pUdXkxY29JZ2l6elBhZTRMUFZYVVh2V21wUEU2SnNsWlgxVC9MZU9RSDJOQ2NUejMzVzJwUEVhWGVxYXFjK1hKK1JFMzdBRmY4QXMwMFhhOUhXM29xZG9tclpRUEdLa2ppODlnN0c5eUxDTXRUTGVseWl1Z0djNmRpVXVNUFN0bDFmKzluMUhHeVhaOWJkRTIvZnd5cHVremZmNmtqbC9sYjJEMXF3WTNLTmhlbmNUKzFhMEVvckNQRGFxZGwwM094NWJKQ04vVWxRNU0yUENWWS92Umt4RnhNWitIUkJUUmJVcmZQQ3dObW10ckRNUitVUTRnZnVVTjRPR3grMWJVYmJlcGJoZEt5M3kwVWpHUXZoWTF3TzgzUEVIMnFlOE5HcnQ5NDJwMnl6MnFGODEzaHBtUVRrT3lDNTU4aGdIYnhXaXRnMnptZzJkYVBpcG9tU2U2VlpHeVc0T2MvZUJsM2VUUjFBSjkyN2xLeDFNbU5QRXZsM0dSdkNBMlRzMlZzdGtQdW9ibSt2TXJoTDBlNEd0YmpEY2NlSzJ2c2lvemJObCttNkU1Qml0MFFQMGNyTjNoMjM2bW12OWdzQWhCbHBZWFZMNU05VHpnTng4bVZhR3hQYmxwSFZWcHRsa3FhbGxydllZMm5GSkpuZGtJR0J1T3hnNXdxVzc4Nmt5MVNoQzZVUzUzT1NUbnBwZXFoOVBhS3lhTjI3SkhBOXpUMkVBNFZNVy9hWmVjaU91ZVhqcmZHQUQ4eXpiTFZFTmRkR2xwTXV5UjZ6TjRjMXBqa3N0Z3Z3QUVrTTc2WjNhUTRidy9mbGU3dit2cmxUV0dTdnNzTlJlcXRwQWJSdzRiSng2emtjZ3FFMm0xTzFyYWpWVXRGWGFVcTZTanBubDBNUmp3QTQ4QzV6emhFMGtzelUraVhlSlc2bUU0dFlKbndKNzY2RFVOOHNMbmVSVTA3YWhneitVMDRQN2lGcUdWNnk1c0MyYzZ3MGxyLzNYdTFzZFRRUjA4a2JaUk0wNWNjZFE1aGFEOGNxbmMzdVB5SmZhTW95dXpGNUF4dmpHT0NwL0RBcHJLL1F0TFdWYld0dWpLa01vM2dEZWNEOEpwL3k5YWp2Qk8wNWY3WFk2dTlWOVZMRmJhOER4YWpkeWNRZU11RHl6eUhhckQxbG8reTZ2ckxmVTM2bWxxdmM5em5SUmJ4RVpKL3hEclUvQzUwTVRJWXdJNDJBTmF4cmNCb0hJQUlVOVEvTnVDdjk5d0tWaWJJN2FVL096Ky8vQUxQbC9oV1gvQnN6L3dBUjEvNnUzMWxhVjJqT2U3UU4rOG8vaUV2cVdhL0JyNGFqdUg2dTMxcGpaMFhEVDJaTDBQTWthU3AvNk1KY0Rna2FmQmpDY3NIQkRuSWNsRTVoR0M3akF5dUVFSmVUQlNpS1J1NHA3QS9rbUVhZFJPNGhMekF5SHUvM29KRGVRUWNGTUZjaDZNMTZiQnlPSEllVDcyNmgwSG83WDk2YUI0Q0k2UnorQTRCVHZGT0JrY1ZGV2NGa1p4MnVUUGRKU2pHRnh3RTlwb21zSU9NbnRVcGJ6NWt2ZHFXSWtmTGIydVp2MUE0ZFRmYXMrNlVBWnRZaURlQUZiSjlxMGpjTUNNck5tbHovQURxeG4vV3lmYXRuUUpLcTMzSGpkdE9VdFpwcytOZlZGL05mM3BXTi9IbW1ZZWtLbWVaK1lLVEFrUEIwaDVNOXBXRWZTSFVHdmw4bHBpS0czUm1ldGs0QnJSbmQ3MHJwZlMwRWRRMjQzY3RxNnduZWEwOFdSbjdUM3J0bW82ZWhhVEdDNlYvRjhydUxuSHpxZXBaT1N2RHJrVnZpNHgzWThqMEZLL0dBRUw5WmJmcUcxdm9hK01FSGpISUI1VWJ1MEZOS1dYbHhVblRTOGszRnA5VEN0cmNYbGRRYUUwMWJkTDIveGVpYnZ6UDR6VHVIbHlIN0IzTDEwRWlnNmVYa244RXZlbVlOTGtqSTFNWlRrNVM1c21vWmU5TzQ1RjRIVW1zWUxCZHFTaXFZdmU2aU11RXVlRFRuR0QzZDZrSTlTeWJnZXlHTjdTTWdoK1FVUldxTHdJejBjMms4ZFQyOGNpV2JLTWpLOE96VkU0L3MwZjBpbzNXR3ByelBwUzZVOW5wR2k0eTB6MlU1RW02UThqR1FUMW9rYll0OVJTelJXSk40S1YwUGE2ZlhmaGRYZTY3d21vcmJWeVZUajFFczhsZytmMUszOW8rc2J6WmRhelUxTFV2OFc2SmhNUk9Ca2ppUjJMTnV6MjA3VjlBYXNGOXRXbjZxYWQ0TGFoai9BQzJUdEp5UTRnL3ZWejNXQys2cWppdjl5dHpiWGNKWXdKYUYwbTl1NDRERHUvc1RPdWtzTGRhd1plejZaUzNsS0xUNjgwTzZ1cjB0ckNka21vYmJTMU5VMGJyWFZrWWNjZGdkMktkc1dpN0phcXBsWlo5TTBkTlVNNHNsaXB4dk43d1RuQ3JTb3BLdWtsREtpQjhSeitVT0JWeTB0UTRVc1FMajhBZGZjczVTbDB5eDM4UFUza2ZQcDc5VVJPamtqckhzZUNIQTV3UWVwZVl1V2dIU05McWFpcUtaL1lHNWI4eW5EVlA2cEgvU0tUZFZTZjhBVWY4QVNLcTBnTm15OTcxbWVBcjlIYWdvU1pSUnl5TmJ4RG93Y2o3Vjd5MTFFekxaVEI3bkNRUk4zdDRjYzQ2OG9ycWgzVzkzenBGODJldFZsTHVCVmJPalMyK3BJKzZsV3o0TTVIL2FQWWlPdlZ3QTRWVGgvd0JyZllvdDh2ZWtueWQ2SHZ5N3dkdFNYWVNqNzVjOGZqai9BS0xmWWtIM2V2ZjhLcWQ4dzlpakhTOGVhNXZvY3B5N3pNdXJZdzJoMWxUSm9hK0I4emlEUXk5bllzOWVEYngxRlgvcTdmV1ZmV3ZIZjhrM29mNktYMUtoL0JyR2RSM0Q5WGI2eXRYUXQrYldDMUVmekVqU05LUGV3bkxjaEkwemNSaE9HNFNqa2FUckREa3U0WE05aUdVRnNCT0FHakNWaktTQndqYnlHeGFVQmZKUVNPK2dxQTkwcnhBSXdBWFFnN3ArZ1RneVVkbzRvQWQ2TU9BVmtpckZZOEFKeEc3cVRWcFN6WFlWa0FuRElTNG4zb3JOdW1UamFrdy82MlQ3Vm8yNHY5NldmTkdNamJ0bHBZNmtONk0zQjdYYnh3T09Wc2FEblhZdjBQRzdmZkQxV21rK2ltdjJMbUQwYU1odkFjQXZZK0lXUUVnUlFmVCs5SFphN1UvNEZQRWZNNzcxaXFwbnZaYlRyUzV4WjVXR1RCVWhUeTh1SzlDeXgwanZnVVRUNWlmYW5NZGdCK0JiM2ZKbFhqVE1WczJwcDMxL1loNmFWU2ROTHk0cDR5d1ZBK0RicFBtU3JiSFhqNE5CS1BrUm8xelhZWjF1czA4djZsOFVDbm03MUlRVGN1S1pDMVhGbjlqbUh5TGhwYmt6aDR2TVBrUlU1THNFWnVxZlNTK0o0TGJWSnZYUzM0Nm9YZnhJMnkrdG5aUVZESFNGeld5RGREaGtEaDFaVTdxM1RadkVMSktuZmpxSWdSRzg4dk1RdlBhVXBhcTJlTlU5VkdZM2RJQ0QxT0dPWVZHM3ZaSEtZd25YdWRUMzBWMnFHOGhCOHNMVDlpZFIzeXJIVlRlanM5aTh1eWZDVmJVZDZ1cldCbm9LMy9TajFBdnRVZnlLWDBkbnNSSFhhZC9OdFA4QVVOOWk4OEtqdlIvR085WDRyZmFMdlExcnBGRXRWVkRhbG01UERCSTNzTVRjZXBGRTRBQUhBRGtvdnhqdlE4WTcxRytVZW1VZWlKTXo5NktaKzlScG43MFV6OTZvNUFKMGtnNmZ2U1Rwa3lNM2VpT203MVJzVHNwSHJwdTlKT2w0ODAwTXVldEFQenpWV1oxMVE2MzBOOU50L3FSZzd2VU5HVGRVUnV1MzUwWGVSbit4U2VwVWg0TS8vd0NSM0Q5WGI2MWMydjVteDZJdlQzSEFGSElQbkdGVFBnMXRQdTljWk9vUU1IN3l0VFI4dExZSTF3LzVFVWFWaFB2UVI5NU5ZSCs5Qkc2Ulo3a2E4cXh4dkliM0ZOK2tRMys5VWJGSndIRytodnBBdjcwTjlVWXBPQXZ2QkJJN3lDaklMY1BGYnk2SEpvSmwwVEllVDcvd2gySEk0ZW1ZbUM3MHc3Vk9TdkRZOER3amgzZW1JbTcwWVREdFhaS09waXR3T1lTczY2NGErMGEvbHFtakE2WnM3VDJqcldncW1YZWpJVlI3WUxVYW1CbHhoYm1TRGcvSFcwK3hhbXpMVkczZGwwZkk4ajVVNktjOU54WWRZUGUrQjdhbG5qcUthS2VNZ3RrYUhBanZTdVQycXY4QVpicUJrMUo3alZNZ0VzWEdFay9DYjJmSXZkN3l5OVZwNWFlMXdaN25ZMjBhdHA2T0dvaDJybitqN1VMQ1J3NU9jUGxSaFBLT1VyeDVubE44aGQzZ2w4czB1SEh1SFFxWndmNmVYNncrMUt4MWs0L3I1ZnJEN1ZIN3k2SHFkNW9xNklQc0plT3NtUE9hWDZaVG1Pcmsvd0NvOC84QWNWQnNseDFwZU9mdlZsTmk4OUxIdUoxbFFUemVmblM4ZFJnYzFCUjFIZWwyVDk2SXBpczlOanNKMWxSM3BWdFQzcURiVWQ2VWJVZDZJcGlzdE1UWXFPOUdGUjNxRkZSM293cUQycXltQWxwaWFGUjNyblQ5NmlSVWQ2NktqdlU3d3RQVDRKWHArOWNNL2VvenArUE5EcGlwY2hPeWdrVFAzb2RMbnJUQnNtZXRIYS92VVpFTGFrUFE5SGE5TTJ2U2dlcE11Nm9kQitVY1BUUVBYWHpNampkSkk4TVkwWmM0bkFBSFd1d1pWMVI0emJ4ZVcyN1FjOUtIanBxNTRoYU04Y2MzSDFMeTNnNTBUb3FHdHJuQWpwcFF4dmVHajJyeG0xTFVjdXN0WFIwOXYzbjBzTHVncGdQeXpuaTc1ZlVybjJlV3RscHN0TFJNSDlHd2J4N1hkWld0Wkh6ZlNxRDZ5NW1Yb3ErTnFYTmRJbnZZbjRZTUl4Zm5yVFZqL0pSZzlaUnN6ckhPK1YzZlRiZnl1aC9lcXNTc2dPUTlkMzAzRCs5ZDNsVVNuV0w3L2Vna2Q1QmRnRHVGZkNVOXFIVEh0VFRlS0c4bGNzL1JIQ1E4NmJ2WFJOM3Bsdkx1K3B5eU9FaDcwNjcwNlk3NVhkL3ZYYnhIQ1E4ZE5rWVVKZklXelJPYTVvYzF3d1Flc0o5MG5uU2M3UTlweXJSbTA4aTkrbFZrV21pa3RSV21wc2x4RlhTRjdZZy9lamUzbXc5aTl0cERXbE5jR01wTGk5c0ZYeTNqd2JKNXV3OXlscnhiMlRNY3g3QTlqaGdnamdWWHQ2MHJKRzkwbENjam4wYmo2aXR5TjFPdHJVTCtUWFJuejJXazJoNVA2bVYrZ1c5Qit0RDdGdEIrUmtJRjVWTjBOKzFEWkNJZWxsM0IvVnpOM2g4aW1vTm8xWTFvRTl1Z2VlMXJ5UHNTZG14cjF6aGlTUFE2WHkrMmJOWTFDbFhMdFRXZnA5aXl0NDVRM2lxNS9DUkwrYW1mWGZjaCtFaVg4MU0rdSs1RC9DTlg0Zm1oditOOWllMS94ZjJMSDNsMXIxVy80U0pmelV6Njc3a1B3a3kvbXBuMXYzTHZ3blYrSDVvaitOOWllMS94bDlpekd5RWRhVWJNVlYvNFNaZnpVejY3N2tZYlM1dnpTejY3N2xLMlRxL0Q4MFVsNWE3RWYvYi9BSXY3RnBObktWYlVkNnFrYlRKaC9kTFBydnVYUnRPbS9ORFBydnVWbHNyVitINW9GTHl4MksvKzM1UDdGc0NvNzBacy9lcW5HMCtVZjNRMzY3N2wwYlVadnpPejY3N2xaYk0xWGgrYUF5OHI5alBwYjhuOWkyaE9qdG1LcVFiVkp2ek96Njc3a1p1MWFZZjNNejYvN2xaYk0xUGgrYUY1K1ZteUgwcytUK3hickpDVXExL2VxZ0cxbWNmM0xIOWY5eU0zYTVPUDdsait2UHNWMXMzVStINWlkbmxOc3Q5TFBrL3NYQzE2Vlk5VTJOcjA0L3VTUDY4K3hIRzJLb0g5eHgra0gyS2Z3N1VlRVFzOG9OblM2VCtUK3hjb2VqdGVxWS9ESFVkVmpqOUlQc1RLNGJYcjdNd3NvcUNrcFNmeWptUWoxQldXemRRK3o1bWZkdHZSWTVTei9abDRWMWZTMEZNK3FyYWlPQ0ZneTU3M1lBVko3VHRwRWw4WSt6Mk12am9YSEVrdkowL2NPeHZyWGw2cDJxZFYxQWtySmFtb2JuZ1pEdXh0OHc1TDJHa05HUVVVaktpb3hVVkE0Z2tlUzN6Qk13b3AwdnBXUE11NHlwejFHMEh1MVIzWTk3QzdMdEtQcDVXM0t1ajkvY1BlMkg4Z2R2blYwMnFNUnhoUTlub1JHMEVoVDBXR3RBQ3o5UmZLNlc4emIwdWhqcDYxR0k4RDBZUFRZT1JnNUw1TFRySEFjamJ5UWE1ZERsR1JLeXNYYTg4a3MrT1JrTWNybWtNa3p1bnR3a3FGOUtLaHBxMnlHTHIzT2E5ZmRaYlY3anhtVUF3RWU5Qm5QNUZhTU41TjVNKzJPR2VTeVVFcHZVSCtDcCtkcUNvQzNTc0FTZ1NVRUVrZm9RTTNrZ09hQ0M0NEJKd3V0T1VFRnh3QWdVRUZKVWIxTFFSeENoSytObVQ1SVFRUmF6TjFhV0NIcVlvM1pEbU5jT3dqS1pPdDFBN0pkU1FrL3dENm9JSnVNNUxvenp0OU5jL1dpbi9ZTDdsMi93Q0p3L1JYZmN1M2ZFNGZvb0lJanRzOFRGWHBLUEF2Z2dlNWR1K0p3L1JYUmE3ZDhUaCtpZ2dwNHMvRXdmbWxIZ1h3UjBXcTNZL0U0Zm9vM3VWYmZpVVAwVUVGM0ZuNG1WZWxvOEMrQ0I3bFczNGxEOUZHRnB0dnhLSDZLQ0NuaXo3MlVlbG84QytDT2kwMjNQNGxEOUZkOXlMWjhTaCtpZ2dySzJmZXlyMHRIZ1h3UjMzSXRtUHhLSDZLSHVSYlBpTVAwVUVGUEZuM3NHOU5UNEY4RUFXZTJaL0VZZm9vd3M5cngrSXdmUlFRWGNXZmV3Y3ROVDRGOEVEM0h0ZWZ4R0Q2S09MTmF2aUVIMFVFRlBFbjNzQzlQVjRWOEVHRm10WHhDRDZLWHA3YlFRdUJqbzRHbnREQWdnbzRrMzFZTGdWcDhvcjRFelJSUjhQSkM5SmJJNHdCaG9RUVFwRFZTUlBVNEFhTUJPVzhrRUVFSklNRWRCQlFMVE90NW82Q0M1aU5oMXFXZkk5ME1jYm5FdFpuZEhaeFFRVUNGZ1ZCQkJjQVAvL1oiLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XSwgImNhdGVnb3JpZXMiOiBbImVkdWNhdGlvbiIsICJwcm9kdWN0aXZpdHkiXSwgImxhbmciOiAiZXMtUEEiLCAiZGlyIjogImx0ciJ9">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Spectral:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary: #0d9488;
+            --primary-dark: #0f766e;
+            --primary-light: #5eead4;
+            --secondary: #14b8a6;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --critical: #dc2626;
+            --bg-main: #f0fdfa;
+            --bg-card: #ffffff;
+            --bg-gradient-start: #86efac;
+            --bg-gradient-end: #fca5a5;
+            --text-primary: #134e4a;
+            --text-secondary: #475569;
+            --border: #99f6e4;
+            --shadow: rgba(13, 148, 136, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Spectral', serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 17px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #86efac 0%, #5eead4 30%, #fcd34d 70%, #fca5a5 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: pulse 15s infinite ease-in-out;
+        }
+
+        .header-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+            animation: float-logo 6s infinite ease-in-out;
+        }
+
+        @keyframes float-logo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header-text {
+            flex: 1;
+            text-align: center;
+        }
+
+        .header-badge {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: #134e4a;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) translateY(0); opacity: 0.8; }
+            50% { transform: scale(1.1) translateY(-10px); opacity: 0.5; }
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Fira Code', monospace;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 0.25rem;
+            color: #134e4a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #134e4a;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--border);
+            overflow-x: auto;
+            padding-bottom: 0;
+        }
+
+        .nav-tab {
+            font-family: 'Fira Code', monospace;
+            background: none;
+            border: none;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            position: relative;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: var(--primary);
+            background: rgba(15, 118, 110, 0.05);
+        }
+
+        .nav-tab.active {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px var(--shadow);
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px var(--shadow);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(134, 239, 172, 0.1) 0%, rgba(252, 165, 165, 0.1) 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+
+        .stat-card.danger::before {
+            background: linear-gradient(90deg, var(--danger) 0%, #fca5a5 100%);
+        }
+
+        .stat-card.warning::before {
+            background: linear-gradient(90deg, var(--warning) 0%, #fcd34d 100%);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .stat-number {
+            font-family: 'Fira Code', monospace;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number.danger {
+            color: var(--danger);
+        }
+
+        .stat-number.warning {
+            color: var(--warning);
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        label .required {
+            color: var(--danger);
+            font-weight: 700;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Spectral', serif;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            background: var(--bg-main);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+            background: white;
+        }
+
+        input[type="number"] {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .grade-input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .grade-input-wrapper {
+            position: relative;
+        }
+
+        .grade-input-wrapper input {
+            text-align: center;
+        }
+
+        .grade-input-wrapper.below-3 input {
+            border-color: var(--danger);
+            background: #fef2f2;
+            color: var(--danger);
+            font-weight: 700;
+        }
+
+        .grade-status {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 0.25rem;
+            font-weight: 600;
+        }
+
+        .grade-status.deficient {
+            color: var(--danger);
+        }
+
+        .grade-status.passing {
+            color: var(--success);
+        }
+
+        .btn {
+            font-family: 'Fira Code', monospace;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(15, 118, 110, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #0e7490;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: var(--critical);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .students-list {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .student-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            border-left: 6px solid var(--primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(134, 239, 172, 0.1) 0%, rgba(252, 211, 77, 0.1) 100%);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+            pointer-events: none;
+        }
+
+        .student-card.alert-deficient {
+            border-left-color: var(--danger);
+            background: linear-gradient(to right, rgba(254, 242, 242, 0.5) 0%, var(--bg-card) 20%);
+        }
+
+        .student-card.alert-deficient::before {
+            background: linear-gradient(135deg, rgba(252, 165, 165, 0.2) 0%, rgba(254, 202, 202, 0.1) 100%);
+        }
+
+        .student-card.alert-risk {
+            border-left-color: var(--warning);
+            background: linear-gradient(to right, rgba(255, 251, 235, 0.5) 0%, var(--bg-card) 20%);
+        }
+
+        .student-card.alert-risk::before {
+            background: linear-gradient(135deg, rgba(252, 211, 77, 0.2) 0%, rgba(253, 224, 71, 0.1) 100%);
+        }
+
+        .student-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 6px 25px var(--shadow);
+        }
+
+        .student-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .student-name {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .student-grade {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .student-average {
+            font-family: 'Fira Code', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .student-average.deficient {
+            color: var(--danger);
+        }
+
+        .student-average.risk {
+            color: var(--warning);
+        }
+
+        .student-average.passing {
+            color: var(--success);
+        }
+
+        .student-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            font-size: 1.3rem;
+        }
+
+        .info-label {
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .badge-deficient { 
+            background: #fef2f2; 
+            color: var(--danger); 
+            border: 2px solid var(--danger);
+        }
+
+        .badge-risk { 
+            background: #fffbeb; 
+            color: #d97706; 
+            border: 2px solid var(--warning);
+        }
+
+        .badge-passing { 
+            background: #d1fae5; 
+            color: #059669; 
+            border: 2px solid var(--success);
+        }
+
+        .badge-preventiva {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 2px solid #3b82f6;
+        }
+
+        .badge-remedial {
+            background: #fef3c7;
+            color: #92400e;
+            border: 2px solid #f59e0b;
+        }
+
+        .alerts-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .alert-item {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-main);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .alert-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .strategies-section {
+            margin-top: 1rem;
+        }
+
+        .strategy-item {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: #ecfdf5;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid var(--success);
+            font-size: 1.3rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 20px;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: slideUp 0.4s ease;
+            border: 3px solid var(--border);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(60px) scale(0.95); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem 2.5rem;
+            border-radius: 17px 17px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-weight: 300;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+        }
+
+        .subjects-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .subject-card {
+            background: var(--bg-main);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .subject-card.deficient {
+            background: #fef2f2;
+            border-color: var(--danger);
+        }
+
+        .subject-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .subject-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .subject-grade {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .subject-grade.deficient {
+            color: var(--danger);
+        }
+
+        .subject-grade.passing {
+            color: var(--success);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .section-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .subtitle { font-size: 0.95rem; }
+            .header { padding: 1.5rem 1rem; }
+            .header-logo { width: 70px; height: 70px; }
+            .header-logo-section { gap: 1rem; }
+            .header-badge { font-size: 0.8rem; padding: 0.3rem 0.75rem; }
+            .card { padding: 1.5rem; }
+            .nav-tabs { gap: 0.25rem; }
+            .nav-tab { padding: 0.75rem 1rem; font-size: 1.3rem; }
+            .stat-number { font-size: 3rem; }
+            .modal-content { margin: 1rem; }
+            .student-average { font-size: 2rem; }
+        }
+
+        .interventions-timeline {
+            margin-top: 1.5rem;
+        }
+
+        .intervention-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 1.5rem;
+            border-left: 3px solid var(--border);
+        }
+
+        .intervention-item:last-child {
+            border-left-color: transparent;
+            padding-bottom: 0;
+        }
+
+        .intervention-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--bg-card);
+        }
+
+        .intervention-date {
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .intervention-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+            .student-card { page-break-inside: avoid; }
+        }
+
+        .avg-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .avg-indicator.deficient { background: var(--danger); }
+        .avg-indicator.risk { background: var(--warning); }
+        .avg-indicator.passing { background: var(--success); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-logo-section">
+                <div class="header-text">
+                    <div class="header-badge">COMISIÓN DE RENDIMIENTO ACADÉMICO</div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem;">
+                        <h1>CReA</h1>
+                        <img src="data:image/png;base64,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" alt="CReA Logo" class="header-logo">
+                    </div>
+                    <p class="subtitle">Escuela de Barrigón • Sistema de Seguimiento por Calificaciones</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="nav-tabs no-print">
+            <button class="nav-tab active" data-tab="dashboard">📊 Dashboard</button>
+            <button class="nav-tab" data-tab="registro">➕ Registrar Estudiante</button>
+            <button class="nav-tab" data-tab="estudiantes">👥 Estudiantes</button>
+            <button class="nav-tab" data-tab="alertas">🚨 Alertas Activas</button>
+            <button class="nav-tab" data-tab="reportes">📄 Reportes</button>
+        </nav>
+
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-total">0</div>
+                    <div class="stat-label">Total Estudiantes</div>
+                </div>
+                <div class="stat-card danger">
+                    <div class="stat-number danger" id="stat-deficient">0</div>
+                    <div class="stat-label">Con Deficiencias (≤2.9)</div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-number warning" id="stat-risk">0</div>
+                    <div class="stat-label">En Riesgo (3.0-3.4)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-passing">0</div>
+                    <div class="stat-label">Rendimiento Normal</div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h2 class="section-title">🚨 Casos Críticos Recientes</h2>
+                    <div id="critical-cases"></div>
+                </div>
+
+                <div class="card">
+                    <h2 class="section-title">📈 Estadísticas por Grado</h2>
+                    <div id="grade-stats"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registro Tab -->
+        <div id="registro" class="tab-content">
+            <div class="card">
+                <h2 class="section-title">Registrar Nuevo Estudiante</h2>
+                <form id="student-form">
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Nombre Completo <span class="required">*</span></label>
+                            <input type="text" id="student-name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cédula del Estudiante</label>
+                            <input type="text" id="student-id" placeholder="8-1234-5678">
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Grado <span class="required">*</span></label>
+                            <select id="grade" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="1°">1°</option>
+                                <option value="2°">2°</option>
+                                <option value="3°">3°</option>
+                                <option value="4°">4°</option>
+                                <option value="5°">5°</option>
+                                <option value="6°">6°</option>
+                                <option value="7°">7°</option>
+                                <option value="8°">8°</option>
+                                <option value="9°">9°</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Sección</label>
+                            <input type="text" id="section" placeholder="Ej: A, B, C">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Docente/Profesor Guía <span class="required">*</span></label>
+                        <input type="text" id="teacher" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Calificaciones por Materia <span class="required">*</span></label>
+                        <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            Ingresa las calificaciones del 1.0 al 5.0. El sistema detectará automáticamente deficiencias (≤2.9).
+                        </p>
+                        <div id="subjects-container"></div>
+                        <button type="button" class="btn btn-outline" onclick="addSubject()" style="margin-top: 1rem;">
+                            ➕ Agregar Materia
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observaciones Adicionales</label>
+                        <textarea id="observations" placeholder="Comportamiento, situación familiar, otros aspectos relevantes..."></textarea>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">💾 Guardar Estudiante</button>
+                        <button type="reset" class="btn btn-secondary" onclick="resetForm()">🔄 Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Estudiantes Tab -->
+        <div id="estudiantes" class="tab-content">
+            <div class="card no-print">
+                <div class="filters">
+                    <input type="text" id="search-filter" class="filter-input" placeholder="🔍 Buscar por nombre...">
+                    <select id="grade-filter" class="filter-input" style="flex: 0 0 200px;">
+                        <option value="">Todos los grados</option>
+                        <option value="1°">1°</option>
+                        <option value="2°">2°</option>
+                        <option value="3°">3°</option>
+                        <option value="4°">4°</option>
+                        <option value="5°">5°</option>
+                        <option value="6°">6°</option>
+                        <option value="7°">7°</option>
+                        <option value="8°">8°</option>
+                        <option value="9°">9°</option>
+                    </select>
+                    <select id="status-filter" class="filter-input" style="flex: 0 0 200px;">
+                        <option value="">Todos los estados</option>
+                        <option value="deficient">Con deficiencias</option>
+                        <option value="risk">En riesgo</option>
+                        <option value="passing">Aprobado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="students-container" class="students-list"></div>
+        </div>
+
+        <!-- Alertas Tab -->
+        <div id="alertas" class="tab-content">
+            <div class="card">
+                <h2 class="section-title">🚨 Estudiantes que Requieren Intervención</h2>
+                <div id="alerts-container"></div>
+            </div>
+        </div>
+
+        <!-- Reportes Tab -->
+        <div id="reportes" class="tab-content">
+            <div class="card">
+                <h2 class="section-title">Generar Reportes</h2>
+                
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="exportGeneralReport()">
+                        📄 Reporte General (PDF)
+                    </button>
+                    <button class="btn btn-secondary" onclick="exportDeficientReport()">
+                        🚨 Reporte de Deficiencias (PDF)
+                    </button>
+                    <button class="btn btn-secondary" onclick="exportData()">
+                        💾 Exportar Datos (JSON)
+                    </button>
+                    <button class="btn btn-secondary" onclick="importData()">
+                        📥 Importar Datos
+                    </button>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <h3 class="section-title">Análisis de Materias con Más Deficiencias</h3>
+                    <div id="subjects-analysis"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Ver/Editar Estudiante -->
+    <div id="student-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Detalles del Estudiante</h3>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="student-details"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Store
+        let students = [];
+        let currentEditingStudent = null;
+
+        // Materias por defecto
+        const defaultSubjects = [
+            'Español',
+            'Matemáticas',
+            'Ciencias Naturales',
+            'Ciencias Sociales',
+            'Inglés',
+            'Educación Física',
+            'Expresiones Artísticas'
+        ];
+
+        // Cargar datos
+        function loadData() {
+            const stored = localStorage.getItem('cra-students');
+            if (stored) {
+                students = JSON.parse(stored);
+                
+                // Migrar datos antiguos: convertir 'curativa/curativo' a 'remedial'
+                students.forEach(student => {
+                    if (student.strategies) {
+                        student.strategies.forEach(strategy => {
+                            if (strategy.type === 'curativa' || strategy.type === 'curativo') {
+                                strategy.type = 'remedial';
+                            }
+                        });
+                    }
+                });
+                
+                // Guardar los datos migrados
+                saveData();
+            }
+            updateDashboard();
+            renderStudents();
+        }
+
+        // Guardar datos
+        function saveData() {
+            localStorage.setItem('cra-students', JSON.stringify(students));
+        }
+
+        // Navegación
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const tabId = tab.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+
+                if (tabId === 'alertas') {
+                    renderAlerts();
+                } else if (tabId === 'reportes') {
+                    updateSubjectsAnalysis();
+                }
+            });
+        });
+
+        // Inicializar materias en el formulario
+        function initializeSubjects() {
+            const container = document.getElementById('subjects-container');
+            container.innerHTML = defaultSubjects.map((subject, index) => `
+                <div class="subject-input-row" style="display: flex; gap: 1rem; margin-bottom: 0.75rem; align-items: center;">
+                    <input type="text" class="subject-name" value="${subject}" placeholder="Nombre de la materia" style="flex: 2;">
+                    <div class="grade-input-wrapper" style="flex: 1;">
+                        <input type="number" class="subject-grade" min="1.0" max="5.0" step="0.1" placeholder="0.0" onchange="checkGradeStatus(this)">
+                        <div class="grade-status"></div>
+                    </div>
+                    ${index >= 7 ? '<button type="button" onclick="removeSubject(this)" class="btn btn-danger btn-icon" style="padding: 0.5rem;">🗑️</button>' : '<div style="width: 42px;"></div>'}
+                </div>
+            `).join('');
+        }
+
+        // Agregar materia
+        function addSubject() {
+            const container = document.getElementById('subjects-container');
+            const newRow = document.createElement('div');
+            newRow.className = 'subject-input-row';
+            newRow.style.cssText = 'display: flex; gap: 1rem; margin-bottom: 0.75rem; align-items: center;';
+            newRow.innerHTML = `
+                <input type="text" class="subject-name" placeholder="Nombre de la materia" style="flex: 2;">
+                <div class="grade-input-wrapper" style="flex: 1;">
+                    <input type="number" class="subject-grade" min="1.0" max="5.0" step="0.1" placeholder="0.0" onchange="checkGradeStatus(this)">
+                    <div class="grade-status"></div>
+                </div>
+                <button type="button" onclick="removeSubject(this)" class="btn btn-danger btn-icon" style="padding: 0.5rem;">🗑️</button>
+            `;
+            container.appendChild(newRow);
+        }
+
+        // Remover materia
+        function removeSubject(btn) {
+            btn.closest('.subject-input-row').remove();
+        }
+
+        // Verificar estado de calificación
+        function checkGradeStatus(input) {
+            const value = parseFloat(input.value);
+            const wrapper = input.closest('.grade-input-wrapper');
+            const status = wrapper.querySelector('.grade-status');
+            
+            if (isNaN(value) || value === 0) {
+                wrapper.classList.remove('below-3');
+                status.textContent = '';
+                status.className = 'grade-status';
+            } else if (value <= 2.9) {
+                wrapper.classList.add('below-3');
+                status.textContent = 'DEFICIENTE';
+                status.className = 'grade-status deficient';
+            } else {
+                wrapper.classList.remove('below-3');
+                status.textContent = 'Aprobado';
+                status.className = 'grade-status passing';
+            }
+        }
+
+        // Calcular promedio y estado
+        function calculateAverage(subjects) {
+            const grades = subjects.map(s => s.grade).filter(g => g > 0);
+            if (grades.length === 0) return { avg: 0, status: 'unknown' };
+            
+            const avg = grades.reduce((a, b) => a + b, 0) / grades.length;
+            let status = 'passing';
+            
+            if (avg <= 2.9) status = 'deficient';
+            else if (avg >= 3.0 && avg <= 3.4) status = 'risk';
+            
+            return { avg: avg.toFixed(2), status };
+        }
+
+        // Detectar alertas automáticas
+        function detectAlerts(subjects, avg) {
+            const alerts = [];
+            const deficientSubjects = subjects.filter(s => s.grade <= 2.9 && s.grade > 0);
+            
+            if (avg <= 2.9) {
+                alerts.push({
+                    type: 'critical',
+                    message: `Promedio general deficiente: ${avg}`,
+                    icon: '🚨'
+                });
+            } else if (avg >= 3.0 && avg <= 3.4) {
+                alerts.push({
+                    type: 'warning',
+                    message: `Promedio en riesgo: ${avg}`,
+                    icon: '⚠️'
+                });
+            }
+            
+            if (deficientSubjects.length > 0) {
+                alerts.push({
+                    type: 'subjects',
+                    message: `${deficientSubjects.length} materia(s) con calificación deficiente`,
+                    icon: '📉',
+                    subjects: deficientSubjects.map(s => s.name)
+                });
+            }
+            
+            if (deficientSubjects.length >= 3) {
+                alerts.push({
+                    type: 'multiple',
+                    message: 'Múltiples deficiencias detectadas - Requiere intervención inmediata',
+                    icon: '⛔'
+                });
+            }
+            
+            return alerts;
+        }
+
+        // Sugerir estrategias específicas por materia
+        function suggestStrategies(subjects, avg, alerts) {
+            const strategies = [];
+            const deficientSubjects = subjects.filter(s => s.grade <= 2.9 && s.grade > 0);
+            
+            // Estrategias específicas por cada materia deficiente
+            deficientSubjects.forEach(subject => {
+                strategies.push({
+                    type: 'remedial',
+                    action: `Refuerzo en ${subject.name}`,
+                    description: `Calificación actual: ${subject.grade.toFixed(1)} - Requiere intervención inmediata`,
+                    subject: subject.name,
+                    currentGrade: subject.grade,
+                    priority: subject.grade <= 2.0 ? 'alta' : 'media'
+                });
+            });
+            
+            // Estrategias generales según cantidad de deficiencias
+            if (deficientSubjects.length >= 3) {
+                strategies.push({
+                    type: 'remedial',
+                    action: 'Reunión urgente con padres/acudientes',
+                    description: `El estudiante presenta ${deficientSubjects.length} materias deficientes. Establecer plan de apoyo integral`,
+                    priority: 'alta'
+                });
+                strategies.push({
+                    type: 'remedial',
+                    action: 'Plan de tutorías intensivo',
+                    description: 'Sesiones personalizadas 3 veces por semana, priorizando materias más críticas',
+                    priority: 'alta'
+                });
+            } else if (deficientSubjects.length > 0) {
+                strategies.push({
+                    type: 'remedial',
+                    action: 'Tutorías específicas',
+                    description: `Sesiones de refuerzo 2 veces por semana en las materias deficientes`,
+                    priority: 'media'
+                });
+                strategies.push({
+                    type: 'remedial',
+                    action: 'Comunicación con padres',
+                    description: 'Reunión urgente para informar deficiencias académicas y establecer plan de apoyo integral en casa',
+                    priority: 'alta'
+                });
+            }
+            
+            // Estrategias preventivas para casos en riesgo
+            if (avg >= 3.0 && avg <= 3.4) {
+                strategies.push({
+                    type: 'preventiva',
+                    action: 'Seguimiento académico quincenal',
+                    description: 'Monitoreo preventivo para evitar que las calificaciones desciendan',
+                    priority: 'media'
+                });
+                strategies.push({
+                    type: 'preventiva',
+                    action: 'Técnicas de estudio',
+                    description: 'Taller de hábitos de estudio y organización del tiempo',
+                    priority: 'baja'
+                });
+                strategies.push({
+                    type: 'preventiva',
+                    action: 'Comunicación con padres',
+                    description: 'Informar situación de riesgo y establecer seguimiento conjunto para evitar descenso en calificaciones',
+                    priority: 'media'
+                });
+                strategies.push({
+                    type: 'preventiva',
+                    action: 'Evaluación socioemocional',
+                    description: 'Identificar tempranamente posibles factores que puedan estar afectando el rendimiento académico',
+                    priority: 'baja'
+                });
+            }
+            
+            // Estrategia socioemocional si hay múltiples alertas
+            if (alerts.length > 2 || deficientSubjects.length >= 4) {
+                strategies.push({
+                    type: 'remedial',
+                    action: 'Evaluación socioemocional urgente',
+                    description: 'Intervención especializada para identificar y atender factores emocionales, familiares o sociales que estén impactando gravemente el rendimiento',
+                    priority: 'alta'
+                });
+            }
+            
+            // Ordenar por prioridad
+            const priorityOrder = { 'alta': 1, 'media': 2, 'baja': 3 };
+            strategies.sort((a, b) => (priorityOrder[a.priority] || 3) - (priorityOrder[b.priority] || 3));
+            
+            return strategies;
+        }
+
+        // Formulario de registro
+        document.getElementById('student-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const subjectRows = document.querySelectorAll('.subject-input-row');
+            const subjects = [];
+            
+            subjectRows.forEach(row => {
+                const name = row.querySelector('.subject-name').value.trim();
+                const grade = parseFloat(row.querySelector('.subject-grade').value) || 0;
+                if (name && grade > 0) {
+                    subjects.push({ name, grade });
+                }
+            });
+
+            if (subjects.length === 0) {
+                alert('Por favor ingresa al menos una calificación');
+                return;
+            }
+
+            const { avg, status } = calculateAverage(subjects);
+            const alerts = detectAlerts(subjects, parseFloat(avg));
+            const strategies = suggestStrategies(subjects, parseFloat(avg), alerts);
+
+            const newStudent = {
+                id: Date.now(),
+                name: document.getElementById('student-name').value,
+                studentId: document.getElementById('student-id').value,
+                grade: document.getElementById('grade').value,
+                section: document.getElementById('section').value,
+                teacher: document.getElementById('teacher').value,
+                subjects: subjects,
+                average: parseFloat(avg),
+                status: status,
+                alerts: alerts,
+                strategies: strategies,
+                observations: document.getElementById('observations').value,
+                createdDate: new Date().toISOString(),
+                interventions: []
+            };
+
+            students.push(newStudent);
+            saveData();
+            updateDashboard();
+            renderStudents();
+
+            document.getElementById('student-form').reset();
+            initializeSubjects();
+            
+            alert('✅ Estudiante registrado exitosamente');
+            document.querySelector('.nav-tab[data-tab="estudiantes"]').click();
+        });
+
+        // Reset form
+        function resetForm() {
+            initializeSubjects();
+        }
+
+        // Actualizar dashboard
+        function updateDashboard() {
+            const total = students.length;
+            const deficient = students.filter(s => s.status === 'deficient').length;
+            const risk = students.filter(s => s.status === 'risk').length;
+            const passing = students.filter(s => s.status === 'passing').length;
+
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-deficient').textContent = deficient;
+            document.getElementById('stat-risk').textContent = risk;
+            document.getElementById('stat-passing').textContent = passing;
+
+            // Casos críticos
+            const critical = students
+                .filter(s => s.status === 'deficient')
+                .sort((a, b) => a.average - b.average)
+                .slice(0, 5);
+
+            const criticalContainer = document.getElementById('critical-cases');
+            if (critical.length === 0) {
+                criticalContainer.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✅</div><p>No hay casos críticos en este momento</p></div>';
+            } else {
+                criticalContainer.innerHTML = critical.map(s => `
+                    <div class="alert-item" onclick="viewStudent(${s.id})" style="cursor: pointer;">
+                        <div class="alert-icon">🚨</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">${s.name} - ${s.grade}${s.section}</div>
+                            <div style="font-size: 1rem; color: var(--text-secondary);">
+                                Promedio: <span style="color: var(--danger); font-weight: 700;">${s.average}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Stats por grado
+            const gradeStats = {};
+            students.forEach(s => {
+                if (!gradeStats[s.grade]) {
+                    gradeStats[s.grade] = { total: 0, deficient: 0 };
+                }
+                gradeStats[s.grade].total++;
+                if (s.status === 'deficient') gradeStats[s.grade].deficient++;
+            });
+
+            const gradeStatsContainer = document.getElementById('grade-stats');
+            const gradeStatsHtml = Object.entries(gradeStats)
+                .sort((a, b) => a[0].localeCompare(b[0]))
+                .map(([grade, stats]) => `
+                    <div style="display: flex; justify-content: space-between; padding: 0.75rem; background: var(--bg-main); border-radius: 8px; margin-bottom: 0.5rem;">
+                        <span style="font-weight: 600;">${grade}</span>
+                        <div>
+                            <span style="color: var(--danger); font-weight: 700;">${stats.deficient}</span> / ${stats.total}
+                        </div>
+                    </div>
+                `).join('');
+
+            gradeStatsContainer.innerHTML = gradeStatsHtml || '<p style="color: var(--text-secondary);">No hay datos disponibles</p>';
+        }
+
+        // Renderizar estudiantes
+        function renderStudents() {
+            const searchTerm = document.getElementById('search-filter')?.value.toLowerCase() || '';
+            const gradeFilter = document.getElementById('grade-filter')?.value || '';
+            const statusFilter = document.getElementById('status-filter')?.value || '';
+
+            let filtered = students.filter(s => {
+                const matchesSearch = s.name.toLowerCase().includes(searchTerm);
+                const matchesGrade = !gradeFilter || s.grade === gradeFilter;
+                const matchesStatus = !statusFilter || s.status === statusFilter;
+                return matchesSearch && matchesGrade && matchesStatus;
+            });
+
+            // Ordenar por promedio (críticos primero)
+            filtered.sort((a, b) => a.average - b.average);
+
+            const container = document.getElementById('students-container');
+            
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🔍</div><p>No se encontraron estudiantes</p></div>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(s => `
+                <div class="student-card alert-${s.status}" onclick="viewStudent(${s.id})">
+                    <div class="student-header">
+                        <div>
+                            <div class="student-name">${s.name}</div>
+                            <div class="student-grade">${s.grade}${s.section ? ' ' + s.section : ''} • ${s.teacher}</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="student-average ${s.status}">${s.average}</div>
+                            <span class="badge badge-${s.status}">
+                                ${getStatusLabel(s.status)}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="student-info">
+                        <div class="info-item">
+                            <div class="info-label">Materias</div>
+                            <div>${s.subjects.length}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Deficiencias</div>
+                            <div style="color: var(--danger); font-weight: 700;">
+                                ${s.subjects.filter(sub => sub.grade <= 2.9).length}
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Alertas</div>
+                            <div>${s.alerts.length}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Estrategias</div>
+                            <div>${s.strategies.length}</div>
+                        </div>
+                    </div>
+                    ${s.alerts.length > 0 ? `
+                        <div class="alerts-section">
+                            ${s.alerts.slice(0, 2).map(alert => `
+                                <div class="alert-item">
+                                    <div class="alert-icon">${alert.icon}</div>
+                                    <div>${alert.message}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        // Ver detalles del estudiante
+        function viewStudent(studentId) {
+            const student = students.find(s => s.id === studentId);
+            if (!student) return;
+
+            currentEditingStudent = student;
+
+            const detailsHtml = `
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 2rem;">
+                        <div>
+                            <h3 style="font-family: 'Fira Code', monospace; font-size: 1.8rem; margin-bottom: 0.5rem;">${student.name}</h3>
+                            <div style="color: var(--text-secondary);">
+                                ${student.grade}${student.section ? ' ' + student.section : ''} • ${student.teacher}
+                            </div>
+                            ${student.studentId ? `<div style="color: var(--text-secondary); font-size: 1.3rem;">Cédula: ${student.studentId}</div>` : ''}
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="student-average ${student.status}" style="font-size: 3rem;">${student.average}</div>
+                            <span class="badge badge-${student.status}">${getStatusLabel(student.status)}</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Calificaciones por Materia</div>
+                    <div class="subjects-list">
+                        ${student.subjects.map(sub => `
+                            <div class="subject-card ${sub.grade <= 2.9 ? 'deficient' : ''}">
+                                <div class="subject-name">${sub.name}</div>
+                                <div class="subject-grade ${sub.grade <= 2.9 ? 'deficient' : 'passing'}">${sub.grade.toFixed(1)}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    ${student.alerts.length > 0 ? `
+                        <div class="section-title" style="margin-top: 2rem;">🚨 Alertas Detectadas</div>
+                        ${student.alerts.map(alert => `
+                            <div class="alert-item">
+                                <div class="alert-icon">${alert.icon}</div>
+                                <div>
+                                    <div style="font-weight: 600;">${alert.message}</div>
+                                    ${alert.subjects ? `<div style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.25rem;">${alert.subjects.join(', ')}</div>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    ` : ''}
+
+                    ${student.strategies.length > 0 ? `
+                        <div class="section-title" style="margin-top: 2rem;">💡 Plan de Intervención</div>
+                        <div style="background: #fef3c7; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--warning); margin-bottom: 1rem;">
+                            <div style="font-weight: 700; margin-bottom: 0.5rem;">📋 Resumen de Estrategias</div>
+                            <div style="font-size: 1.3rem;">
+                                ${student.strategies.filter(s => s.type === 'remedial').length} estrategias remediales • 
+                                ${student.strategies.filter(s => s.type === 'preventiva').length} estrategias preventivas
+                            </div>
+                        </div>
+                        <div class="strategies-section">
+                            ${student.strategies.map(strategy => `
+                                <div class="strategy-item" style="border-left-color: ${strategy.priority === 'alta' ? 'var(--danger)' : strategy.priority === 'media' ? 'var(--warning)' : 'var(--success)'};">
+                                    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                                        <span class="badge badge-${strategy.type}">
+                                            ${strategy.type === 'preventiva' ? '🛡️ Preventiva' : '📚 Remedial'}
+                                        </span>
+                                        ${strategy.priority ? `
+                                            <span class="badge" style="background: ${strategy.priority === 'alta' ? '#fef2f2' : strategy.priority === 'media' ? '#fffbeb' : '#f0fdf4'}; 
+                                                                        color: ${strategy.priority === 'alta' ? 'var(--danger)' : strategy.priority === 'media' ? '#d97706' : 'var(--success)'}; 
+                                                                        border: 2px solid ${strategy.priority === 'alta' ? 'var(--danger)' : strategy.priority === 'media' ? 'var(--warning)' : 'var(--success)'}; 
+                                                                        font-size: 0.85rem;">
+                                                ${strategy.priority === 'alta' ? '🔴 PRIORIDAD ALTA' : strategy.priority === 'media' ? '🟡 PRIORIDAD MEDIA' : '🟢 PRIORIDAD BAJA'}
+                                            </span>
+                                        ` : ''}
+                                        ${strategy.subject ? `
+                                            <span class="badge" style="background: #dbeafe; color: #1e40af; border: 2px solid #3b82f6; font-size: 0.85rem;">
+                                                📚 ${strategy.subject}
+                                            </span>
+                                        ` : ''}
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <div style="font-weight: 700; margin-bottom: 0.35rem; font-size: 1.2rem;">${strategy.action}</div>
+                                        <div style="font-size: 1.3rem; color: var(--text-secondary); line-height: 1.5;">${strategy.description}</div>
+                                        ${strategy.currentGrade ? `
+                                            <div style="margin-top: 0.5rem; padding: 0.5rem; background: #fef2f2; border-radius: 6px; font-size: 1rem;">
+                                                <strong>Calificación actual:</strong> <span style="color: var(--danger); font-weight: 700;">${strategy.currentGrade.toFixed(1)}</span> / 5.0
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    ${student.subjects.filter(s => s.grade <= 2.9).length > 0 ? `
+                        <div class="section-title" style="margin-top: 2rem;">🎯 Materias que Requieren Intervención Prioritaria</div>
+                        <div style="display: grid; gap: 1rem;">
+                            ${student.subjects.filter(s => s.grade <= 2.9).sort((a, b) => a.grade - b.grade).map(subject => `
+                                <div style="background: #fef2f2; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--danger);">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                                        <div>
+                                            <div style="font-weight: 700; font-size: 1.3rem;">${subject.name}</div>
+                                            <div style="font-size: 1rem; color: var(--text-secondary);">Requiere refuerzo inmediato</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: 700; color: var(--danger);">${subject.grade.toFixed(1)}</div>
+                                            <div style="font-size: 1.3rem; color: var(--text-secondary);">/ 5.0</div>
+                                        </div>
+                                    </div>
+                                    <div style="background: white; padding: 0.75rem; border-radius: 8px; font-size: 1.3rem;">
+                                        <div style="font-weight: 600; margin-bottom: 0.35rem;">📝 Acciones sugeridas:</div>
+                                        <ul style="margin: 0; padding-left: 1.5rem; color: var(--text-secondary);">
+                                            <li>Tutorías personalizadas 2-3 veces por semana</li>
+                                            <li>Evaluación diagnóstica para identificar vacíos conceptuales</li>
+                                            <li>Material de apoyo y ejercicios de refuerzo</li>
+                                            ${subject.grade <= 2.0 ? '<li style="color: var(--danger); font-weight: 600;">⚠️ URGENTE: Riesgo alto de reprobación</li>' : ''}
+                                        </ul>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    ${student.observations ? `
+                        <div class="section-title" style="margin-top: 2rem;">📝 Observaciones</div>
+                        <div style="background: var(--bg-main); padding: 1.25rem; border-radius: 12px; border: 2px solid var(--border);">
+                            ${student.observations}
+                        </div>
+                    ` : ''}
+
+                    ${student.interventions && student.interventions.length > 0 ? `
+                        <div class="section-title" style="margin-top: 2rem;">📋 Historial de Intervenciones</div>
+                        <div class="interventions-timeline">
+                            ${student.interventions.map(inter => `
+                                <div class="intervention-item">
+                                    <div class="intervention-date">${formatDate(inter.date)}</div>
+                                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                                        <span class="badge" style="background: #dbeafe; color: #1e40af; border: 2px solid #3b82f6; font-size: 0.85rem;">
+                                            ${getInterventionTypeLabel(inter.type)}
+                                        </span>
+                                        ${inter.subject ? `
+                                            <span class="badge" style="background: #fef3c7; color: #d97706; border: 2px solid var(--warning); font-size: 0.85rem;">
+                                                📚 ${inter.subject}
+                                            </span>
+                                        ` : ''}
+                                        ${inter.gradeChange ? `
+                                            <span class="badge" style="background: ${inter.gradeChange.to > inter.gradeChange.from ? '#d1fae5' : '#fef2f2'}; 
+                                                                        color: ${inter.gradeChange.to > inter.gradeChange.from ? 'var(--success)' : 'var(--danger)'}; 
+                                                                        border: 2px solid ${inter.gradeChange.to > inter.gradeChange.from ? 'var(--success)' : 'var(--danger)'}; 
+                                                                        font-size: 0.85rem;">
+                                                ${inter.gradeChange.from.toFixed(1)} → ${inter.gradeChange.to.toFixed(1)} 
+                                                ${inter.gradeChange.to > inter.gradeChange.from ? '📈' : '📉'}
+                                            </span>
+                                        ` : ''}
+                                    </div>
+                                    <div class="intervention-text">${inter.note}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="editStudent(${student.id})">✏️ Editar</button>
+                        <button class="btn btn-secondary" onclick="addIntervention(${student.id})">➕ Registrar Intervención</button>
+                        <button class="btn btn-success" onclick="exportStudentPDF(${student.id})">📄 Exportar PDF</button>
+                        <button class="btn btn-danger" onclick="deleteStudent(${student.id})">🗑️ Eliminar</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('student-details').innerHTML = detailsHtml;
+            document.getElementById('student-modal').classList.add('active');
+        }
+
+        // Editar estudiante
+        function editStudent(studentId) {
+            const student = students.find(s => s.id === studentId);
+            if (!student) return;
+
+            const editHtml = `
+                <form id="edit-student-form" onsubmit="saveEditedStudent(event, ${studentId})">
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Nombre Completo</label>
+                            <input type="text" id="edit-name" value="${student.name}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cédula</label>
+                            <input type="text" id="edit-student-id" value="${student.studentId || ''}">
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Grado</label>
+                            <select id="edit-grade" required>
+                                ${['1°','2°','3°','4°','5°','6°','7°','8°','9°'].map(g => 
+                                    `<option value="${g}" ${student.grade === g ? 'selected' : ''}>${g}</option>`
+                                ).join('')}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sección</label>
+                            <input type="text" id="edit-section" value="${student.section || ''}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Docente/Profesor Guía</label>
+                        <input type="text" id="edit-teacher" value="${student.teacher}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Calificaciones</label>
+                        <div id="edit-subjects-container">
+                            ${student.subjects.map((sub, idx) => `
+                                <div class="subject-input-row" style="display: flex; gap: 1rem; margin-bottom: 0.75rem; align-items: center;">
+                                    <input type="text" class="subject-name" value="${sub.name}" style="flex: 2;">
+                                    <div class="grade-input-wrapper ${sub.grade <= 2.9 ? 'below-3' : ''}" style="flex: 1;">
+                                        <input type="number" class="subject-grade" value="${sub.grade}" min="1.0" max="5.0" step="0.1" onchange="checkGradeStatus(this)">
+                                        <div class="grade-status ${sub.grade <= 2.9 ? 'deficient' : 'passing'}">${sub.grade <= 2.9 ? 'DEFICIENTE' : 'Aprobado'}</div>
+                                    </div>
+                                    <button type="button" onclick="removeSubject(this)" class="btn btn-danger btn-icon" style="padding: 0.5rem;">🗑️</button>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <button type="button" class="btn btn-outline" onclick="addEditSubject()">➕ Agregar Materia</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observaciones</label>
+                        <textarea id="edit-observations">${student.observations || ''}</textarea>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">💾 Guardar Cambios</button>
+                        <button type="button" class="btn btn-secondary" onclick="viewStudent(${studentId})">❌ Cancelar</button>
+                    </div>
+                </form>
+            `;
+
+            document.getElementById('student-details').innerHTML = editHtml;
+        }
+
+        // Agregar materia en edición
+        function addEditSubject() {
+            const container = document.getElementById('edit-subjects-container');
+            const newRow = document.createElement('div');
+            newRow.className = 'subject-input-row';
+            newRow.style.cssText = 'display: flex; gap: 1rem; margin-bottom: 0.75rem; align-items: center;';
+            newRow.innerHTML = `
+                <input type="text" class="subject-name" placeholder="Nombre de la materia" style="flex: 2;">
+                <div class="grade-input-wrapper" style="flex: 1;">
+                    <input type="number" class="subject-grade" min="1.0" max="5.0" step="0.1" placeholder="0.0" onchange="checkGradeStatus(this)">
+                    <div class="grade-status"></div>
+                </div>
+                <button type="button" onclick="removeSubject(this)" class="btn btn-danger btn-icon" style="padding: 0.5rem;">🗑️</button>
+            `;
+            container.appendChild(newRow);
+        }
+
+        // Guardar estudiante editado
+        function saveEditedStudent(event, studentId) {
+            event.preventDefault();
+            
+            const studentIndex = students.findIndex(s => s.id === studentId);
+            if (studentIndex === -1) return;
+
+            const subjectRows = document.querySelectorAll('#edit-subjects-container .subject-input-row');
+            const subjects = [];
+            
+            subjectRows.forEach(row => {
+                const name = row.querySelector('.subject-name').value.trim();
+                const grade = parseFloat(row.querySelector('.subject-grade').value) || 0;
+                if (name && grade > 0) {
+                    subjects.push({ name, grade });
+                }
+            });
+
+            if (subjects.length === 0) {
+                alert('Debe haber al menos una calificación');
+                return;
+            }
+
+            const { avg, status } = calculateAverage(subjects);
+            const alerts = detectAlerts(subjects, parseFloat(avg));
+            const strategies = suggestStrategies(subjects, parseFloat(avg), alerts);
+
+            students[studentIndex] = {
+                ...students[studentIndex],
+                name: document.getElementById('edit-name').value,
+                studentId: document.getElementById('edit-student-id').value,
+                grade: document.getElementById('edit-grade').value,
+                section: document.getElementById('edit-section').value,
+                teacher: document.getElementById('edit-teacher').value,
+                subjects: subjects,
+                average: parseFloat(avg),
+                status: status,
+                alerts: alerts,
+                strategies: strategies,
+                observations: document.getElementById('edit-observations').value
+            };
+
+            saveData();
+            updateDashboard();
+            renderStudents();
+            viewStudent(studentId);
+            alert('✅ Estudiante actualizado exitosamente');
+        }
+
+        // Agregar intervención
+        function addIntervention(studentId) {
+            const student = students.find(s => s.id === studentId);
+            if (!student) return;
+
+            // Crear modal personalizado para registro de intervención
+            const deficientSubjects = student.subjects.filter(s => s.grade <= 2.9);
+            
+            const modalHtml = `
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-family: 'Fira Code', monospace; margin-bottom: 1.5rem;">Registrar Intervención</h3>
+                    
+                    ${deficientSubjects.length > 0 ? `
+                        <div class="form-group">
+                            <label>Materia específica (opcional)</label>
+                            <select id="intervention-subject" style="width: 100%;">
+                                <option value="">Intervención general</option>
+                                ${deficientSubjects.map(s => `<option value="${s.name}">${s.name} (${s.grade.toFixed(1)})</option>`).join('')}
+                            </select>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="form-group">
+                        <label>Tipo de intervención <span class="required">*</span></label>
+                        <select id="intervention-type" style="width: 100%;">
+                            <option value="tutoria">Tutoría académica</option>
+                            <option value="reunion">Reunión con padres</option>
+                            <option value="evaluacion">Evaluación de progreso</option>
+                            <option value="refuerzo">Actividad de refuerzo</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Descripción de la intervención <span class="required">*</span></label>
+                        <textarea id="intervention-note" rows="4" placeholder="Describe la intervención realizada, resultados observados, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Nueva calificación (si aplica)</label>
+                        <input type="number" id="intervention-grade" min="1.0" max="5.0" step="0.1" placeholder="Dejar vacío si no hay nueva calificación">
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="saveIntervention(${studentId})">💾 Guardar</button>
+                        <button class="btn btn-secondary" onclick="viewStudent(${studentId})">❌ Cancelar</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('student-details').innerHTML = modalHtml;
+        }
+
+        // Guardar intervención
+        function saveIntervention(studentId) {
+            const subject = document.getElementById('intervention-subject')?.value || null;
+            const type = document.getElementById('intervention-type').value;
+            const note = document.getElementById('intervention-note').value;
+            const newGrade = document.getElementById('intervention-grade')?.value;
+
+            if (!note.trim()) {
+                alert('Por favor describe la intervención realizada');
+                return;
+            }
+
+            const studentIndex = students.findIndex(s => s.id === studentId);
+            if (studentIndex === -1) return;
+
+            if (!students[studentIndex].interventions) {
+                students[studentIndex].interventions = [];
+            }
+
+            const intervention = {
+                date: new Date().toISOString(),
+                type: type,
+                note: note,
+                subject: subject
+            };
+
+            // Si hay nueva calificación, actualizar la materia
+            if (newGrade && subject) {
+                const subjectIndex = students[studentIndex].subjects.findIndex(s => s.name === subject);
+                if (subjectIndex !== -1) {
+                    const oldGrade = students[studentIndex].subjects[subjectIndex].grade;
+                    students[studentIndex].subjects[subjectIndex].grade = parseFloat(newGrade);
+                    intervention.gradeChange = {
+                        from: oldGrade,
+                        to: parseFloat(newGrade)
+                    };
+                    
+                    // Recalcular promedio y estrategias
+                    const { avg, status } = calculateAverage(students[studentIndex].subjects);
+                    const alerts = detectAlerts(students[studentIndex].subjects, parseFloat(avg));
+                    const strategies = suggestStrategies(students[studentIndex].subjects, parseFloat(avg), alerts);
+                    
+                    students[studentIndex].average = parseFloat(avg);
+                    students[studentIndex].status = status;
+                    students[studentIndex].alerts = alerts;
+                    students[studentIndex].strategies = strategies;
+                }
+            }
+
+            students[studentIndex].interventions.push(intervention);
+
+            saveData();
+            updateDashboard();
+            renderStudents();
+            viewStudent(studentId);
+            alert('✅ Intervención registrada exitosamente');
+        }
+
+        // Eliminar estudiante
+        function deleteStudent(studentId) {
+            if (!confirm('¿Eliminar este estudiante? Esta acción no se puede deshacer.')) return;
+
+            students = students.filter(s => s.id !== studentId);
+            saveData();
+            updateDashboard();
+            renderStudents();
+            closeModal();
+            alert('✅ Estudiante eliminado');
+        }
+
+        // Renderizar alertas
+        function renderAlerts() {
+            const alertStudents = students.filter(s => s.status === 'deficient' || s.status === 'risk');
+            alertStudents.sort((a, b) => a.average - b.average);
+
+            const container = document.getElementById('alerts-container');
+
+            if (alertStudents.length === 0) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✅</div><p>No hay estudiantes que requieran intervención en este momento</p></div>';
+                return;
+            }
+
+            container.innerHTML = alertStudents.map(s => `
+                <div class="student-card alert-${s.status}" onclick="viewStudent(${s.id})" style="margin-bottom: 1.5rem;">
+                    <div class="student-header">
+                        <div>
+                            <div class="student-name">${s.name}</div>
+                            <div class="student-grade">${s.grade}${s.section ? ' ' + s.section : ''}</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="student-average ${s.status}">${s.average}</div>
+                            <span class="badge badge-${s.status}">${getStatusLabel(s.status)}</span>
+                        </div>
+                    </div>
+                    <div class="alerts-section">
+                        ${s.alerts.map(alert => `
+                            <div class="alert-item">
+                                <div class="alert-icon">${alert.icon}</div>
+                                <div>${alert.message}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="strategies-section">
+                        ${s.strategies.slice(0, 3).map(strategy => `
+                            <div class="strategy-item">
+                                <span class="badge badge-${strategy.type}">
+                                    ${strategy.type === 'preventiva' ? '🛡️' : '📚'}
+                                </span>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; font-size: 1.3rem;">${strategy.action}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Análisis de materias
+        function updateSubjectsAnalysis() {
+            const subjectsMap = {};
+            
+            students.forEach(student => {
+                student.subjects.forEach(sub => {
+                    if (sub.grade <= 2.9) {
+                        if (!subjectsMap[sub.name]) {
+                            subjectsMap[sub.name] = 0;
+                        }
+                        subjectsMap[sub.name]++;
+                    }
+                });
+            });
+
+            const sorted = Object.entries(subjectsMap)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10);
+
+            const container = document.getElementById('subjects-analysis');
+
+            if (sorted.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-secondary);">No hay deficiencias registradas</p>';
+                return;
+            }
+
+            container.innerHTML = sorted.map(([subject, count]) => `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg-main); border-radius: 10px; margin-bottom: 0.75rem; border-left: 4px solid var(--danger);">
+                    <span style="font-weight: 600; font-size: 1.2rem;">${subject}</span>
+                    <span style="font-family: 'Fira Code', monospace; font-size: 1.8rem; font-weight: 700; color: var(--danger);">${count}</span>
+                </div>
+            `).join('');
+        }
+
+        // Exportar PDF de estudiante
+        async function exportStudentPDF(studentId) {
+            const student = students.find(s => s.id === studentId);
+            if (!student) return;
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            let y = 20;
+
+            // Título
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text('Ficha de Seguimiento de Rendimiento Académico', 105, y, { align: 'center' });
+            
+            y += 8;
+            doc.setFontSize(12);
+            doc.text('Escuela de Barrigón', 105, y, { align: 'center' });
+
+            y += 15;
+            doc.setFontSize(14);
+            doc.setFont(undefined, 'bold');
+            doc.text(student.name, 20, y);
+            
+            y += 8;
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.text(`Grado: ${student.grade}${student.section ? ' ' + student.section : ''}`, 20, y);
+            doc.text(`Promedio: ${student.average} - ${getStatusLabel(student.status)}`, 120, y);
+
+            y += 6;
+            doc.text(`Docente: ${student.teacher}`, 20, y);
+            if (student.studentId) {
+                doc.text(`Cédula: ${student.studentId}`, 120, y);
+            }
+
+            // Calificaciones
+            y += 12;
+            doc.setFont(undefined, 'bold');
+            doc.text('CALIFICACIONES POR MATERIA', 20, y);
+            
+            y += 8;
+            doc.setFont(undefined, 'normal');
+            student.subjects.forEach(sub => {
+                if (y > 270) {
+                    doc.addPage();
+                    y = 20;
+                }
+                const gradeColor = sub.grade <= 2.9 ? [220, 38, 38] : [0, 0, 0];
+                doc.setTextColor(...gradeColor);
+                doc.text(`${sub.name}: ${sub.grade.toFixed(1)}${sub.grade <= 2.9 ? ' (DEFICIENTE)' : ''}`, 25, y);
+                doc.setTextColor(0, 0, 0);
+                y += 6;
+            });
+
+            // Alertas
+            if (student.alerts.length > 0) {
+                y += 8;
+                doc.setFont(undefined, 'bold');
+                doc.text('ALERTAS DETECTADAS', 20, y);
+                
+                y += 8;
+                doc.setFont(undefined, 'normal');
+                student.alerts.forEach(alert => {
+                    if (y > 270) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    const lines = doc.splitTextToSize(`• ${alert.message}`, 170);
+                    doc.text(lines, 25, y);
+                    y += lines.length * 6;
+                });
+            }
+
+            // Estrategias
+            if (student.strategies.length > 0) {
+                y += 8;
+                if (y > 260) {
+                    doc.addPage();
+                    y = 20;
+                }
+                doc.setFont(undefined, 'bold');
+                doc.text('ESTRATEGIAS DE INTERVENCIÓN', 20, y);
+                
+                y += 8;
+                doc.setFont(undefined, 'normal');
+                student.strategies.forEach(strategy => {
+                    if (y > 260) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    doc.setFont(undefined, 'bold');
+                    // Convertir términos antiguos
+                    const typeLabel = strategy.type === 'curativa' ? 'REMEDIAL' : strategy.type.toUpperCase();
+                    doc.text(`[${typeLabel}] ${strategy.action}`, 25, y);
+                    y += 6;
+                    doc.setFont(undefined, 'normal');
+                    const lines = doc.splitTextToSize(strategy.description, 165);
+                    doc.text(lines, 25, y);
+                    y += lines.length * 6 + 3;
+                });
+            }
+
+            doc.save(`Estudiante_${student.name.replace(/\s+/g, '_')}_${Date.now()}.pdf`);
+        }
+
+        // Exportar reporte general
+        async function exportGeneralReport() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            let y = 20;
+
+            doc.setFontSize(16);
+            doc.setFont(undefined, 'bold');
+            doc.text('Reporte General - Comisión de Rendimiento Académico', 105, y, { align: 'center' });
+            
+            y += 8;
+            doc.setFontSize(11);
+            doc.text('Escuela de Barrigón', 105, y, { align: 'center' });
+            
+            y += 6;
+            doc.text(`Fecha: ${formatDate(new Date().toISOString())}`, 105, y, { align: 'center' });
+
+            y += 15;
+            doc.setFontSize(12);
+            doc.setFont(undefined, 'bold');
+            doc.text('ESTADÍSTICAS GENERALES', 20, y);
+            
+            y += 8;
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.text(`Total de estudiantes: ${students.length}`, 20, y);
+            
+            y += 6;
+            doc.setTextColor(220, 38, 38);
+            doc.text(`Con deficiencias (≤2.9): ${students.filter(s => s.status === 'deficient').length}`, 20, y);
+            
+            y += 6;
+            doc.setTextColor(245, 158, 11);
+            doc.text(`En riesgo (3.0-3.4): ${students.filter(s => s.status === 'risk').length}`, 20, y);
+            
+            y += 6;
+            doc.setTextColor(0, 0, 0);
+            doc.text(`Rendimiento normal: ${students.filter(s => s.status === 'passing').length}`, 20, y);
+
+            // Lista de estudiantes con deficiencias
+            const deficient = students.filter(s => s.status === 'deficient' || s.status === 'risk');
+            if (deficient.length > 0) {
+                y += 15;
+                doc.setFont(undefined, 'bold');
+                doc.text('ESTUDIANTES QUE REQUIEREN INTERVENCIÓN', 20, y);
+                
+                y += 8;
+                doc.setFontSize(9);
+                deficient.forEach((student, index) => {
+                    if (y > 270) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    
+                    doc.setFont(undefined, 'bold');
+                    doc.text(`${index + 1}. ${student.name}`, 20, y);
+                    
+                    y += 5;
+                    doc.setFont(undefined, 'normal');
+                    doc.text(`${student.grade}${student.section} | Promedio: ${student.average} | Deficiencias: ${student.subjects.filter(s => s.grade <= 2.9).length}`, 25, y);
+                    
+                    y += 8;
+                });
+            }
+
+            doc.save(`Reporte_General_CRA_${Date.now()}.pdf`);
+        }
+
+        // Exportar reporte de deficiencias
+        async function exportDeficientReport() {
+            const deficient = students.filter(s => s.status === 'deficient');
+            
+            if (deficient.length === 0) {
+                alert('No hay estudiantes con deficiencias para reportar');
+                return;
+            }
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            let y = 20;
+
+            doc.setFontSize(16);
+            doc.setFont(undefined, 'bold');
+            doc.text('Reporte de Deficiencias Académicas', 105, y, { align: 'center' });
+            
+            y += 8;
+            doc.setFontSize(11);
+            doc.text('Escuela de Barrigón', 105, y, { align: 'center' });
+            
+            y += 6;
+            doc.text(`Fecha: ${formatDate(new Date().toISOString())}`, 105, y, { align: 'center' });
+
+            y += 6;
+            doc.setTextColor(220, 38, 38);
+            doc.text(`Estudiantes con deficiencias: ${deficient.length}`, 105, y, { align: 'center' });
+            doc.setTextColor(0, 0, 0);
+
+            y += 15;
+            doc.setFontSize(10);
+            
+            deficient.forEach((student, index) => {
+                if (y > 250) {
+                    doc.addPage();
+                    y = 20;
+                }
+                
+                doc.setFont(undefined, 'bold');
+                doc.text(`${index + 1}. ${student.name} - ${student.grade}${student.section}`, 20, y);
+                
+                y += 6;
+                doc.setFont(undefined, 'normal');
+                doc.text(`Promedio: ${student.average} | Docente: ${student.teacher}`, 25, y);
+                
+                y += 6;
+                doc.text('Materias deficientes:', 25, y);
+                
+                y += 5;
+                student.subjects.filter(s => s.grade <= 2.9).forEach(sub => {
+                    if (y > 270) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    doc.text(`  • ${sub.name}: ${sub.grade.toFixed(1)}`, 30, y);
+                    y += 5;
+                });
+                
+                y += 8;
+            });
+
+            doc.save(`Reporte_Deficiencias_${Date.now()}.pdf`);
+        }
+
+        // Exportar/Importar datos
+        function exportData() {
+            const dataStr = JSON.stringify(students, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `CRA_Backup_${Date.now()}.json`;
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        const imported = JSON.parse(event.target.result);
+                        if (confirm(`¿Importar ${imported.length} estudiantes? Esto reemplazará los datos actuales.`)) {
+                            students = imported;
+                            saveData();
+                            updateDashboard();
+                            renderStudents();
+                            alert('✅ Datos importados exitosamente');
+                        }
+                    } catch (error) {
+                        alert('❌ Error: Archivo JSON inválido');
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+
+        // Cerrar modal
+        function closeModal() {
+            document.getElementById('student-modal').classList.remove('active');
+            currentEditingStudent = null;
+        }
+
+        // Filtros
+        document.getElementById('search-filter')?.addEventListener('input', renderStudents);
+        document.getElementById('grade-filter')?.addEventListener('change', renderStudents);
+        document.getElementById('status-filter')?.addEventListener('change', renderStudents);
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('student-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'student-modal') closeModal();
+        });
+
+        // Helpers
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('es-PA', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+
+        function getStatusLabel(status) {
+            const labels = {
+                'deficient': 'Deficiente (≤2.9)',
+                'risk': 'En Riesgo (3.0-3.4)',
+                'passing': 'Normal (≥3.5)'
+            };
+            return labels[status] || status;
+        }
+
+        function getInterventionTypeLabel(type) {
+            const labels = {
+                'tutoria': '📖 Tutoría',
+                'reunion': '👨‍👩‍👧 Reunión',
+                'evaluacion': '📝 Evaluación',
+                'refuerzo': '💪 Refuerzo',
+                'otro': '📌 Otro'
+            };
+            return labels[type] || type;
+        }
+
+        // Service Worker PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('data:text/javascript;base64,Y29uc3QgQ0FDSEVfTkFNRSA9ICdjcmVhLXYxJzsKY29uc3QgdXJsc1RvQ2FjaGUgPSBbCiAgJy4vJywKICAnLi9pbmRleC5odG1sJwpdOwoKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgKGV2ZW50KSA9PiB7CiAgZXZlbnQud2FpdFVudGlsKAogICAgY2FjaGVzLm9wZW4oQ0FDSEVfTkFNRSkKICAgICAgLnRoZW4oKGNhY2hlKSA9PiBjYWNoZS5hZGRBbGwodXJsc1RvQ2FjaGUpKQogICk7CiAgc2VsZi5za2lwV2FpdGluZygpOwp9KTsKCnNlbGYuYWRkRXZlbnRMaXN0ZW5lcignYWN0aXZhdGUnLCAoZXZlbnQpID0+IHsKICBldmVudC53YWl0VW50aWwoCiAgICBjYWNoZXMua2V5cygpLnRoZW4oKGNhY2hlTmFtZXMpID0+IHsKICAgICAgcmV0dXJuIFByb21pc2UuYWxsKAogICAgICAgIGNhY2hlTmFtZXMubWFwKChjYWNoZU5hbWUpID0+IHsKICAgICAgICAgIGlmIChjYWNoZU5hbWUgIT09IENBQ0hFX05BTUUpIHsKICAgICAgICAgICAgcmV0dXJuIGNhY2hlcy5kZWxldGUoY2FjaGVOYW1lKTsKICAgICAgICAgIH0KICAgICAgICB9KQogICAgICApOwogICAgfSkKICApOwogIHJldHVybiBzZWxmLmNsaWVudHMuY2xhaW0oKTsKfSk7CgpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2ZldGNoJywgKGV2ZW50KSA9PiB7CiAgZXZlbnQucmVzcG9uZFdpdGgoCiAgICBjYWNoZXMubWF0Y2goZXZlbnQucmVxdWVzdCkKICAgICAgLnRoZW4oKHJlc3BvbnNlKSA9PiB7CiAgICAgICAgaWYgKHJlc3BvbnNlKSB7CiAgICAgICAgICByZXR1cm4gcmVzcG9uc2U7CiAgICAgICAgfQogICAgICAgIHJldHVybiBmZXRjaChldmVudC5yZXF1ZXN0KS50aGVuKChyZXNwb25zZSkgPT4gewogICAgICAgICAgaWYgKCFyZXNwb25zZSB8fCByZXNwb25zZS5zdGF0dXMgIT09IDIwMCB8fCByZXNwb25zZS50eXBlICE9PSAnYmFzaWMnKSB7CiAgICAgICAgICAgIHJldHVybiByZXNwb25zZTsKICAgICAgICAgIH0KICAgICAgICAgIGNvbnN0IHJlc3BvbnNlVG9DYWNoZSA9IHJlc3BvbnNlLmNsb25lKCk7CiAgICAgICAgICBjYWNoZXMub3BlbihDQUNIRV9OQU1FKQogICAgICAgICAgICAudGhlbigoY2FjaGUpID0+IHsKICAgICAgICAgICAgICBjYWNoZS5wdXQoZXZlbnQucmVxdWVzdCwgcmVzcG9uc2VUb0NhY2hlKTsKICAgICAgICAgICAgfSk7CiAgICAgICAgICByZXR1cm4gcmVzcG9uc2U7CiAgICAgICAgfSk7CiAgICAgIH0pCiAgKTsKfSk7Cg==')
+                    .then(() => console.log('PWA lista'))
+                    .catch(() => console.log('SW no disponible'));
+            });
+        }
+
+        // Inicializar
+        initializeSubjects();
+        loadData();
+    </script>
+</body>
+</html>
